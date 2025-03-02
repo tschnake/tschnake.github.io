@@ -58,3 +58,14 @@ footer {
   text-align: center;
   padding: 10px;
 }
+
+ul.custom-bullets {
+  list-style-type: disc; /* You can use circle, square, etc. */
+  margin-left: 40px;     /* Adjust left margin for indentation */
+  padding-left: 20px;    /* Optional: additional padding */
+}
+
+/* Optionally style the list items */
+ul.custom-bullets li {
+  margin-bottom: 8px; /* Spacing between items */
+}
