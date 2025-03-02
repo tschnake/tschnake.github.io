@@ -69,3 +69,12 @@ ul.custom-bullets {
 ul.custom-bullets li {
   margin-bottom: 8px; /* Spacing between items */
 }
+
+nav ul li a {
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  display: inline-block;
+  margin: 5px;
+  text-decoration: none;
+  color: white;
+}
