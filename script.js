@@ -1,0 +1,4 @@
+/* 
+  No additional JavaScript functionality is required at the moment.
+  The embedded documents are shown via iframes and can be opened in a new tab for editing.
+*/
