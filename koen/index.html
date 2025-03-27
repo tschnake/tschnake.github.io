@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guitar Lessons for Kids</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Guitar Lessons for Kids</h1>
+  </header>
+  
+  <div class="container">
+    <!-- Example card for Lesson 1 -->
+    <div class="card" data-video="videos/guitar-lesson1.mp4">
+      <img src="images/lesson1.jpg" alt="Guitar Lesson 1 Thumbnail">
+      <div class="card-content">
+        <h3>Lesson 1: Basic Chords</h3>
+      </div>
+    </div>
+    
+    <!-- Example card for Lesson 2 -->
+    <div class="card" data-video="videos/guitar-lesson2.mp4">
+      <img src="images/lesson2.jpg" alt="Guitar Lesson 2 Thumbnail">
+      <div class="card-content">
+        <h3>Lesson 2: Strumming Patterns</h3>
+      </div>
+    </div>
+    
+    <!-- Add more cards as needed -->
+  </div>
+  
+  <!-- Overlay for modal -->
+  <div class="overlay" id="overlay"></div>
+  
+  <!-- Modal video player -->
+  <div class="video-player" id="videoPlayer">
+    <button class="close" id="closeButton">&times;</button>
+    <video id="videoElement" controls>
+      <source src="" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
