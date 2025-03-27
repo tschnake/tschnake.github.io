@@ -14,6 +14,16 @@ body {
 /* Introductory section styling */
 .intro {
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    background-color: #e0f7fa;
+  }
+/* 
+.intro {
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -21,7 +31,16 @@ body {
     padding: 20px;
     background-color: #e0f7fa;
   }
-  
+   */
+
+.intro-image,
+.intro-video {
+  height: 500px;       /* Ensures a consistent height */
+  max-width: 100%;    /* Responsive scaling if needed */
+  border-radius: 10px;
+}
+
+/* 
   .intro-image {
     max-width: 300px;
     border-radius: 10px;
@@ -31,7 +50,7 @@ body {
     max-width: 500px;
     max-height: 400px;
     border-radius: 10px;
-  }
+  } */
    
   .container {
     display: flex;
