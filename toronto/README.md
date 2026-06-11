@@ -9,26 +9,48 @@ Domain sind anklickbare Links, E-Mail-Adressen sind `mailto:`-Links.
 Reine Vanilla-Technik — **kein Build-Tool, kein Framework, kein npm**. GitHub
 Pages liefert die Dateien direkt aus.
 
-## Dateistruktur
+## Aufbau (Mehrseiten-Website)
+
+Die Seite besteht aus einer **Startseite** mit großen Themen-Karten und je
+einer **eigenen Unterseite pro Thema**. Ein Klick auf eine Karte verlässt die
+Startseite und lädt z. B. `klimapolitik.html` — dort stehen Logo, einführende
+Worte und der Abschnittsinhalt.
 
 ```
 toronto/
-├── index.html          # Gerüst mit Mount-Punkten (hero, kurzfassung, …)
+├── index.html               # Startseite: Logo-Hero, Kurzfassung, große Karten
+├── <thema>.html             # 16 Einzelseiten (klimapolitik.html, natur.html, …),
+│                            #   schlanke Gerüste mit <body data-section="…">
 ├── css/
-│   └── styles.css       # Styling, in nummerierte Abschnitte gegliedert
+│   └── styles.css           # Styling, in nummerierte Abschnitte gegliedert
 ├── js/
-│   └── main.js          # Rendert die Daten + Suche/Filter + Scroll-Spy
+│   ├── main.js              # rendert die STARTSEITE (Hero, Karten, Suche)
+│   └── section.js           # rendert eine EINZELSEITE (liest data-section)
 ├── data/
-│   └── sections.js      # >>> HIER die Inhalte pflegen <<<
+│   └── sections.js          # >>> HIER die Inhalte pflegen <<<
+├── img/
+│   └── logo.svg             # Logo (Toronto-Skyline + Dackel) — austauschbar
 └── README.md
 ```
 
 ### Inhalte ändern
 
-Den gesamten Text pflegst du in **`data/sections.js`** — `index.html` und
-`js/main.js` musst du dafür nicht anfassen. Jeder Abschnitt ist ein Objekt mit
-`id`, `num`, `title`, `intro`, `items` (bzw. `groups`) und optionalem
-`seasonal`-Hinweis; das Schema ist oben in der Datei kommentiert.
+Den gesamten Text pflegst du in **`data/sections.js`** — die HTML- und
+JS-Dateien musst du dafür nicht anfassen. Jeder Abschnitt ist ein Objekt mit
+`id`, `num`, `title`, `icon` (Emoji für die Karte), `lead` (einführende Worte),
+`intro`, `items` (bzw. `groups`) und optionalem `seasonal`-Hinweis; das Schema
+ist oben in der Datei kommentiert.
+
+**Einen neuen Abschnitt hinzufügen:** ein Objekt in `sections` ergänzen und eine
+gleichnamige `<id>.html` anlegen (am einfachsten eine vorhandene Themenseite
+kopieren und nur `data-section="<id>"` anpassen). Die Karte auf der Startseite
+erscheint dann automatisch.
+
+### Logo tauschen
+
+`img/logo.svg` ist ein eigenständiges SVG. Du kannst es durch ein anderes Bild
+ersetzen (gleichen Dateinamen behalten) oder die Pfade `img/logo.svg` in
+`js/main.js` und `js/section.js` anpassen.
 
 **Warum `sections.js` und nicht `sections.json`?** Browser blockieren
 `fetch()` auf lokale Dateien über das `file://`-Protokoll (CORS). Läge der

@@ -39,6 +39,20 @@ window.GUIDE_DATA = {
     'Saisonaler Hinweis: Der Zeitraum Sept–März ist der Toronto-Winter; viele Outdoor-/Natur- und Familienangebote verlagern sich nach drinnen, aber Schlittschuhlaufen (Evergreen Brick Works), Langlauf (TRCA-Gebiete) und hundefreundliche Wintertrails (High Park, Cherry Beach) sind verfügbar. Die großen akademischen Konferenzen (CPSA) finden im Frühsommer statt; daher liegt der Netzwerk-Fokus im Winter auf Seminarreihen, Vorträgen und direkter Kontaktaufnahme.',
   ],
 
+  /* --- Meta für die Sonderseiten Empfehlungen & Vorbehalte -------------- */
+  extras: {
+    empfehlungen: {
+      title: "Empfehlungen",
+      icon: "⭐",
+      lead: "Gestaffelte, praktische Schritte für Ankommen, Aufbauen und Vertiefen (Sept 2026 – März 2027).",
+    },
+    vorbehalte: {
+      title: "Vorbehalte",
+      icon: "⚠️",
+      lead: "Wichtige Einschränkungen — prognostizierte Termine und einzelne Angaben vor Nutzung prüfen.",
+    },
+  },
+
   /* --- Die 14 thematischen Abschnitte ----------------------------------- */
   sections: [
     /* 1 ------------------------------------------------------------------ */
@@ -46,6 +60,8 @@ window.GUIDE_DATA = {
       id: "klimapolitik",
       num: 1,
       title: "Klimapolitik",
+      icon: "🌍",
+      lead: "Wo du in Toronto klimapolitisch andockst — von der Dachkoalition TCAN über städtische Programme bis zu indigener Klimagerechtigkeit.",
       intro:
         "Toronto hat ein tief verwurzeltes Klima-Aktivismus-Ökosystem (überwiegend auf Englisch).",
       items: [
@@ -67,6 +83,8 @@ window.GUIDE_DATA = {
       id: "kontakte",
       num: 2,
       title: "Leute kennenlernen / Kontakte knüpfen",
+      icon: "🤝",
+      lead: "Deutschsprachige und internationale Netzwerke, um in Toronto schnell sozialen Anschluss zu finden.",
       intro: null,
       items: [
         { html: '<strong>German Meetup Toronto</strong> — <a href="https://meetup.com/germans" target="_blank" rel="noopener">meetup.com/germans</a> — Gründer Frank Seiferth und So German! (<a href="https://sogerman.ca" target="_blank" rel="noopener">sogerman.ca</a>) dokumentieren, dass die Gruppe „auf heute mehr als 3.700 Mitglieder gewachsen ist, mit 60 neuen Mitgliedern pro Monat — das größte deutsche Meetup in ganz Nordamerika", mit über 900 Treffen in 12 Jahren. Der typische Pub-Abend findet am ersten Donnerstag im <strong>Sin &amp; Redemption Pub, 136 McCaul St</strong> (gegenüber der AGO) statt. Veranstaltet gemeinsame Events mit dem Deutschen Generalkonsulat, dem Goethe-Institut und deutschen Schulen. (Deutsch + Englisch.)' },
@@ -84,6 +102,8 @@ window.GUIDE_DATA = {
       id: "kindergruppen",
       num: 3,
       title: "Kindergruppen mit Eltern",
+      icon: "👶",
+      lead: "Kostenlose Eltern-Kind-Angebote und deutschsprachige Familiengruppen für das Neugeborene.",
       intro:
         "Familienfreundlich für das Neugeborene; die meisten sind kostenlos.",
       items: [
@@ -114,6 +134,8 @@ window.GUIDE_DATA = {
       id: "sozialpolitik-ehrenamt",
       num: 4,
       title: "Sozialpolitik im Ehrenamt",
+      icon: "🫶",
+      lead: "Freiwilligenzentren, Think Tanks und Stiftungen an der Schnittstelle von Sozial- und Public Policy.",
       intro: null,
       items: [
         { html: '<strong>Volunteer Toronto</strong> — <a href="https://volunteertoronto.ca" target="_blank" rel="noopener">volunteertoronto.ca</a> — Kanadas größtes Freiwilligenzentrum; durchsuchbare Angebote + Infoveranstaltungen „How to Become a Volunteer". Beste Anlaufstelle für den Einstieg.' },
@@ -134,6 +156,8 @@ window.GUIDE_DATA = {
       id: "feminismus",
       num: 5,
       title: "Feminismus",
+      icon: "♀️",
+      lead: "Feministische Rechtsarbeit, Stiftungen und Stadtpolitik — bis zur Kundgebung am Internationalen Frauentag.",
       intro: null,
       items: [
         { html: '<strong>LEAF (Women\'s Legal Education &amp; Action Fund) — Branch Toronto</strong> — <a href="https://leaf.ca/branch/leaf-toronto" target="_blank" rel="noopener">leaf.ca/branch/leaf-toronto</a> — feministische Rechtsarbeit (Gleichheitsklagen nach der Charta, Gesetzesreform, Öffentlichkeitsarbeit); Ehrenamt in Unterausschüssen für Öffentlichkeitsarbeit/Veranstaltungen.' },
@@ -154,6 +178,8 @@ window.GUIDE_DATA = {
       id: "kultur-kunst",
       num: 6,
       title: "Kultur und Kunst (Sept 2026 – März 2027)",
+      icon: "🎨",
+      lead: "Museen, Galerien und das Goethe-Institut — Kulturprogramm für den Toronto-Winter.",
       intro: null,
       items: [
         { html: '<strong>Art Gallery of Ontario (AGO)</strong> — <a href="https://ago.ca" target="_blank" rel="noopener">ago.ca</a> — 317 Dundas St W (Chinatown/Grange Park). Wechselnde Ausstellungen; <strong>AGO Friday Nights</strong>; kostenlos für alle unter 25. Mehrere Ausstellungen laufen im Zeitraum (z. B. Eröffnungen am 7. und 17. Okt. 2026; eine Eröffnung im März 2027). Weltweit größte öffentliche Henry-Moore-Sammlung.' },
@@ -173,6 +199,8 @@ window.GUIDE_DATA = {
       id: "indigene-geschichte",
       num: 7,
       title: "First Nations / Indigene Geschichte (historisch und kulturell)",
+      icon: "🪶",
+      lead: "Von Indigenen geführte Zentren, Touren und Gedenktage zur Geschichte vor Ort.",
       intro:
         "Respektvoll engagieren; viele dieser Einrichtungen werden von Indigenen geführt und heißen alle willkommen.",
       items: [
@@ -193,6 +221,8 @@ window.GUIDE_DATA = {
       id: "literatur-schreiben",
       num: 8,
       title: "Literatur und Schreiben",
+      icon: "✍️",
+      lead: "Schreibworkshops, Lesereihen und Festivals — auf Englisch und Deutsch.",
       intro: null,
       items: [
         { html: '<strong>Toronto International Festival of Authors (TIFA/IFOA)</strong> — <a href="https://festivalofauthors.ca" target="_blank" rel="noopener">festivalofauthors.ca</a> — laut eigener Website „Kanadas am längsten laufendes Literaturfestival", das „seit 1974 über 9.500 der besten kanadischen und internationalen Autor:innen, Künstler:innen und Denker:innen präsentiert hat", darunter 22 Nobelpreisträger:innen. Jährlich Ende Okt.–Anfang Nov. (im Zeitraum); Lesungen, Autorengespräche, Preisträger-Events. Ganzjähriges Programm und ein virtueller Buchclub. (Hinweis: nicht mehr am Harbourfront angesiedelt; die Partnerschaft „Toronto Lit Up" mit dem Toronto Arts Council ist beendet — aktuelles Programm für lokale Autor:innen prüfen.)' },
@@ -214,6 +244,8 @@ window.GUIDE_DATA = {
       id: "lesegruppen",
       num: 9,
       title: "Lesen und Lesegruppen",
+      icon: "📚",
+      lead: "Buchclubs der Stadtbibliothek und deutschsprachiges Lesen über das Goethe-Institut.",
       intro: null,
       items: [
         { html: '<strong>Toronto Public Library (TPL) – Buchclubs</strong> — <a href="https://torontopubliclibrary.ca" target="_blank" rel="noopener">torontopubliclibrary.ca</a> / <a href="https://tpl.bibliocommons.com" target="_blank" rel="noopener">tpl.bibliocommons.com</a> — Dutzende kostenloser monatlicher Clubs in den Filialen (Sept–Juni). Beispiele: Merril Collection SF/Fantasy Club (Filiale Lillian H. Smith, 239 College St; 2. Donnerstag); Parkdale 2SLGBTQ+ Book Club; Sachbuch-/Memoiren-Clubs. Die TPL verleiht auch Mehrfach-Exemplar-Sets („Book Club To Go") für selbst organisierte Gruppen.' },
@@ -236,6 +268,8 @@ window.GUIDE_DATA = {
       id: "natur",
       num: 10,
       title: "Natur (inkl. hundefreundlich & Winter)",
+      icon: "🐾",
+      lead: "Hundefreundliche Parks und Wintertrails für den Dackel — plus Familien-Naturprogramme.",
       intro:
         "Relevant für den Dackel — Hinweis: kleine/kurzhaarige Hunde brauchen im Winter einen Mantel &amp; Pfotenschutz.",
       items: [
@@ -259,6 +293,8 @@ window.GUIDE_DATA = {
       id: "sport-yoga",
       num: 11,
       title: "Sport, Yoga und Gymnastik",
+      icon: "🧘",
+      lead: "Postnatale und Mutter-Kind-Angebote für Yoga, Pilates und Fitness.",
       intro: "Fokus auf postnatale/Mutter-Kind-Angebote (familienfreundlich):",
       items: [
         { html: '<strong>Toronto Yoga Mamas / kāer</strong> — <a href="https://torontoyogamamas.com" target="_blank" rel="noopener">torontoyogamamas.com</a> — Yoga von der Schwangerschaft bis zur Familie, Barre, Doula- &amp; Wellness-Dienste; „One-Stop-Shop". (Jetzt unter der Marke kāer, Frauen-Wellness-Klinik.)' },
@@ -278,6 +314,8 @@ window.GUIDE_DATA = {
       id: "konferenzen",
       num: 12,
       title: "Konferenzen Politikwissenschaft",
+      icon: "🎤",
+      lead: "Die wichtigsten politikwissenschaftlichen Konferenzen — und wie du dort andockst.",
       intro: null,
       items: [
         { html: '<strong>Canadian Political Science Association (CPSA) – Jahreskonferenz</strong> — <a href="https://cpsa-acsp.ca" target="_blank" rel="noopener">cpsa-acsp.ca</a> — findet jedes Frühjahr im Rahmen des <strong>Congress of the Humanities and Social Sciences</strong> statt. <strong>2026: Ottawa (2.–4. Juni)</strong>; <strong>2027: University of British Columbia, 26.–28. Mai</strong> (Co-Vorsitzende: Tracey Raney (TMU) und Edward Koning (Guelph)). Die zentrale Präsenz-Netzwerkveranstaltung (außerhalb des Zeitraums Sept–März, aber im Winter planen/einreichen — beachte den <strong>Child and Dependent Care Subsidy</strong> für Vortragende, hilfreich mit einem Baby). Fachsektionen decken u. a. Geschlecht &amp; Politik, Public Policy, Umweltpolitik ab.' },
@@ -294,6 +332,8 @@ window.GUIDE_DATA = {
       id: "ki-gesellschaft",
       num: 13,
       title: "KI und gesellschaftliche/politische Implikationen",
+      icon: "🤖",
+      lead: "Institute, Think Tanks und Kontakte rund um KI-Governance und Gesellschaft.",
       intro: null,
       items: [
         { html: '<strong>Schwartz Reisman Institute for Technology and Society (SRI)</strong>, U of T — <a href="https://srinstitute.utoronto.ca" target="_blank" rel="noopener">srinstitute.utoronto.ca</a> — führendes Institut für KI &amp; Gesellschaft (108 College St / Schwartz Reisman Innovation Campus). Laut SRI-eigener Research-Seite „umfasst unsere Community über 150 Forschende der University of Toronto aus 34 verschiedenen Fakultäten und Abteilungen und 20 einzigartigen akademischen Disziplinen". Die <strong>SRI-Seminarreihe</strong> ist <strong>kostenlos und für alle offen</strong> (in Präsenz und/oder online — Anmeldung pro Seminar; Aufzeichnungen auf YouTube). Direktor: David Lie; Stellv. Direktorin: Sheila McIlraith. Jüngste Vortragende zu KI &amp; Demokratie/Governance: Beth Simone Noveck, Kate Larson, Joel Z. Leibo, Bruce Schneier. Außerdem: <strong>Privacy Discussion Group</strong>, <strong>Toronto AI Safety</strong>-Diskussionen und die jährliche <strong>Absolutely Interdisciplinary</strong>-Konferenz. Wege als Gast: <strong>SRI Global Fellow</strong> und <strong>Scholar-in-Residence</strong> (erfordern eine akademische Anstellung andernorts).' },
@@ -309,6 +349,8 @@ window.GUIDE_DATA = {
       id: "lehrstuehle-kontakte",
       num: 14,
       title: "Lehrstühle und Kontakte (Netzwerk & Karriere)",
+      icon: "🎓",
+      lead: "Konkrete akademische Kontakte und erste Schritte für das berufliche Netzwerk.",
       intro: null,
       groups: [
         {

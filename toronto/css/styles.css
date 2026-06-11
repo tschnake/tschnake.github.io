@@ -2,32 +2,34 @@
    styles.css — Toronto-Leitfaden
    ----------------------------------------------------------------------------
    Gliederung (zum gezielten Ändern):
-     1. Design-Tokens (Farben, Maße) als CSS-Variablen
+     1. Design-Tokens (Farben, Maße)
      2. Grundlagen & Typografie
-     3. Eingangs-/Heldensektion (.hero)
+     3. Eingangs-/Heldensektion der Startseite (.hero) + Logo
      4. Boxen: Kurzfassung & Vorbehalte (.box)
-     5. Navigation / Themen-Übersicht (.nav, .nav-card)
-     6. Themenblöcke (.topic, .item-list, .seasonal)
-     7. Footer
-     8. Responsives Verhalten (Media Queries)
-   Warme, dezente Palette; gut lesbare Typografie; mobil zuerst gedacht.
+     5. Themen-Karten der Startseite (.card-grid, .card)  <-- die großen Sprung-Boxen
+     6. Kopfbereich der Einzelseiten (.page-head) + Logo
+     7. Abschnittsinhalt (.topic-body, .item-list, .seasonal)
+     8. Footer
+     9. Responsives Verhalten
+   Warme, dezente Palette; gut lesbare Typografie; mobil zuerst.
    ========================================================================== */
 
 /* -- 1. Design-Tokens -------------------------------------------------- */
 :root {
-  --bg:          #fbf7f0;   /* warmes Cremeweiß */
+  --bg:          #fbf7f0;
   --surface:     #ffffff;
-  --ink:         #2e2a25;   /* dunkles Warmgrau für Text */
+  --ink:         #2e2a25;
   --ink-soft:    #5d564d;
-  --accent:      #b4532a;   /* warmes Terrakotta */
+  --accent:      #b4532a;
   --accent-deep: #8c3d1d;
   --accent-soft: #f3e3d8;
-  --highlight:   #f7eede;   /* Kurzfassungs-Kasten */
-  --caveat:      #f1ede6;   /* Vorbehalte-Kasten (dezent) */
+  --highlight:   #f7eede;
+  --caveat:      #f1ede6;
   --line:        #e6ddd0;
-  --radius:      12px;
+  --radius:      14px;
   --maxw:        860px;
   --shadow:      0 2px 10px rgba(80, 50, 20, 0.07);
+  --shadow-lift: 0 10px 24px rgba(80, 50, 20, 0.16);
 }
 
 /* -- 2. Grundlagen & Typografie ---------------------------------------- */
@@ -51,7 +53,6 @@ body {
 
 a { color: var(--accent-deep); text-decoration: underline; text-underline-offset: 2px; }
 a:hover { color: var(--accent); }
-
 strong { color: var(--ink); }
 
 .visually-hidden {
@@ -59,15 +60,20 @@ strong { color: var(--ink); }
   clip: rect(0 0 0 0); white-space: nowrap;
 }
 
-/* -- 3. Eingangs-/Heldensektion ---------------------------------------- */
+/* -- 3. Eingangs-/Heldensektion (Startseite) --------------------------- */
 .hero {
   background: linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%);
   color: #fff;
-  padding: 56px 20px 48px;
+  padding: 48px 20px 44px;
   text-align: center;
 }
+.hero__logo {
+  width: 120px; height: 120px;
+  margin-bottom: 18px;
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.25));
+}
 .hero__period {
-  margin: 0 0 14px;
+  margin: 0 0 12px;
   font-family: system-ui, sans-serif;
   font-size: 0.85rem;
   letter-spacing: 0.14em;
@@ -94,10 +100,7 @@ strong { color: var(--ink); }
   padding: 22px 26px;
   margin: 36px 0;
 }
-.box__title {
-  margin: 0 0 10px;
-  font-size: 1.25rem;
-}
+.box__title { margin: 0 0 10px; font-size: 1.25rem; }
 .box--highlight {
   background: var(--highlight);
   border: 1px solid var(--accent-soft);
@@ -111,14 +114,14 @@ strong { color: var(--ink); }
   font-size: 0.95rem;
   color: var(--ink-soft);
 }
-.box--caveat .box__title { color: var(--ink-soft); }
 
-/* -- 5. Navigation / Themen-Übersicht ---------------------------------- */
-.nav { margin: 36px 0; }
-.nav__search { margin-bottom: 16px; }
+/* -- 5. Themen-Karten der Startseite (die großen Sprung-Boxen) --------- */
+.nav { margin: 40px 0; }
+.nav__title { font-size: 1.5rem; margin: 0 0 14px; }
+.nav__search { margin-bottom: 20px; }
 #search {
   width: 100%;
-  padding: 13px 16px;
+  padding: 14px 16px;
   font-size: 1rem;
   font-family: system-ui, sans-serif;
   color: var(--ink);
@@ -136,94 +139,141 @@ strong { color: var(--ink); }
   color: var(--ink-soft);
 }
 
-.nav__cards {
+.card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 18px;
 }
-.nav-card {
+.card {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 14px;
+  gap: 18px;
+  padding: 22px 24px;
+  min-height: 116px;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   text-decoration: none;
   color: var(--ink);
-  font-family: system-ui, sans-serif;
-  font-size: 0.92rem;
-  line-height: 1.25;
-  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
-}
-.nav-card:hover {
-  transform: translateY(-2px);
   box-shadow: var(--shadow);
+  transition: transform 0.14s ease, box-shadow 0.14s ease, border-color 0.14s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift);
   border-color: var(--accent);
   color: var(--ink);
 }
-.nav-card.is-active {
-  border-color: var(--accent);
-  background: var(--accent-soft);
-}
-.nav-card__num {
+.card__icon {
   flex: 0 0 auto;
-  width: 26px; height: 26px;
+  width: 60px; height: 60px;
   display: grid; place-items: center;
-  background: var(--accent);
-  color: #fff;
+  font-size: 2rem;
+  background: var(--accent-soft);
   border-radius: 50%;
-  font-size: 0.8rem;
+}
+.card__body { display: flex; flex-direction: column; gap: 4px; }
+.card__title {
+  font-size: 1.18rem;
   font-weight: 700;
+  line-height: 1.25;
+}
+.card__lead {
+  font-size: 0.94rem;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+.card__go {
+  flex: 0 0 auto;
+  margin-left: auto;
+  font-size: 1.4rem;
+  color: var(--accent);
+  opacity: 0.6;
+  transition: transform 0.14s ease, opacity 0.14s ease;
+}
+.card:hover .card__go { opacity: 1; transform: translateX(3px); }
+/* Sonderkarten (Empfehlungen / Vorbehalte) etwas hervorgehoben */
+.card--special { background: var(--highlight); border-color: var(--accent-soft); }
+
+/* -- 6. Kopfbereich der Einzelseiten ----------------------------------- */
+.page-head {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%);
+  color: #fff;
+  padding: 20px 20px 40px;
+}
+.page-head__bar {
+  max-width: var(--maxw);
+  margin: 0 auto 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.page-head__home {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  text-decoration: none;
+  font-family: system-ui, sans-serif;
+  font-weight: 600;
+}
+.page-head__logo { width: 52px; height: 52px; }
+.page-head__back {
+  color: #fff;
+  text-decoration: none;
+  font-family: system-ui, sans-serif;
+  font-size: 0.9rem;
+  padding: 7px 14px;
+  border: 1px solid rgba(255,255,255,0.55);
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.page-head__back:hover { color: #fff; background: rgba(255,255,255,0.16); }
+.page-head__eyebrow {
+  max-width: var(--maxw);
+  margin: 0 auto 6px;
+  font-family: system-ui, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+.page-head__title {
+  max-width: var(--maxw);
+  margin: 0 auto 12px;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  line-height: 1.2;
+}
+.page-head__lead {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  font-size: 1.1rem;
+  font-style: italic;
+  opacity: 0.96;
 }
 
-/* -- 6. Themenblöcke --------------------------------------------------- */
-.topic {
+/* -- 7. Abschnittsinhalt ----------------------------------------------- */
+.topic-body {
+  display: block;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 26px 28px;
-  margin: 22px 0;
-  scroll-margin-top: 16px;
+  padding: 28px 30px;
+  margin: 28px 0 0;
+  box-shadow: var(--shadow);
 }
-.topic__title {
-  margin: 0 0 14px;
-  font-size: 1.4rem;
-  line-height: 1.25;
-}
-.topic__num {
-  display: inline-grid; place-items: center;
-  width: 32px; height: 32px;
-  margin-right: 6px;
-  background: var(--accent-soft);
-  color: var(--accent-deep);
-  border-radius: 50%;
-  font-size: 0.95rem;
-  font-weight: 700;
-  vertical-align: middle;
-}
-.topic__intro {
-  margin: 0 0 16px;
-  font-style: italic;
-  color: var(--ink-soft);
-}
+.topic__intro { margin: 0 0 16px; font-style: italic; color: var(--ink-soft); }
 
-.group__heading {
-  margin: 22px 0 8px;
-  font-size: 1.08rem;
-  color: var(--accent-deep);
-}
-.group__sub {
-  font-size: 0.85rem;
-  font-weight: 400;
-}
+.group__heading { margin: 24px 0 8px; font-size: 1.12rem; color: var(--accent-deep); }
+.group__heading:first-child { margin-top: 0; }
+.group__sub { font-size: 0.85rem; font-weight: 400; }
 
 .item-list { margin: 0; padding-left: 1.3em; }
 .item-list > li { margin-bottom: 14px; }
 .sub-list { margin: 8px 0 4px; padding-left: 1.2em; }
 .sub-list > li { margin-bottom: 8px; }
 
-/* Saisonaler Hinweis innerhalb eines Themenblocks */
 .seasonal {
   margin-top: 18px;
   padding: 12px 16px;
@@ -234,10 +284,7 @@ strong { color: var(--ink); }
   color: var(--ink-soft);
 }
 
-/* Empfehlungen erben .topic, bekommen aber einen wärmeren Rand */
-.topic--recommend { border-color: var(--accent-soft); border-left: 4px solid var(--accent); }
-
-/* -- 7. Footer --------------------------------------------------------- */
+/* -- 8. Footer --------------------------------------------------------- */
 .site-footer {
   text-align: center;
   padding: 28px 20px;
@@ -247,11 +294,13 @@ strong { color: var(--ink); }
   border-top: 1px solid var(--line);
 }
 
-/* -- 8. Responsives Verhalten ------------------------------------------ */
+/* -- 9. Responsives Verhalten ------------------------------------------ */
 @media (max-width: 600px) {
   body { font-size: 16px; }
-  .hero { padding: 40px 16px 36px; }
-  .topic { padding: 20px 18px; }
-  .box { padding: 18px 18px; }
-  .nav__cards { grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); }
+  .hero { padding: 36px 16px 36px; }
+  .card-grid { grid-template-columns: 1fr; }
+  .card { padding: 18px; gap: 14px; min-height: 0; }
+  .card__icon { width: 52px; height: 52px; font-size: 1.7rem; }
+  .topic-body { padding: 20px 18px; }
+  .page-head__bar { flex-wrap: wrap; }
 }

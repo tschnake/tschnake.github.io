@@ -1,0 +1,58 @@
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Toronto-Leitfaden Logo">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c2632f"/>
+      <stop offset="1" stop-color="#8c3d1d"/>
+    </linearGradient>
+    <clipPath id="badge">
+      <circle cx="60" cy="60" r="54"/>
+    </clipPath>
+  </defs>
+
+  <!-- Hintergrund-Badge -->
+  <circle cx="60" cy="60" r="54" fill="url(#sky)"/>
+
+  <g clip-path="url(#badge)">
+    <!-- Sonne -->
+    <circle cx="36" cy="33" r="9" fill="#faf3e8" opacity="0.92"/>
+
+    <!-- Skyline (cremefarbene Silhouette) -->
+    <g fill="#faf3e8">
+      <!-- linke Gebäude -->
+      <rect x="33" y="70" width="8" height="20" opacity="0.82"/>
+      <rect x="41" y="62" width="11" height="28" opacity="0.9"/>
+      <!-- CN Tower -->
+      <rect x="59" y="28" width="2" height="18"/>
+      <ellipse cx="60" cy="48" rx="5" ry="3"/>
+      <polygon points="57.5,52 62.5,52 64.5,90 55.5,90"/>
+      <!-- rechte Gebäude -->
+      <rect x="70" y="58" width="11" height="32" opacity="0.9"/>
+      <rect x="81" y="68" width="8" height="22" opacity="0.82"/>
+    </g>
+
+    <!-- Bodenband -->
+    <rect x="0" y="90" width="120" height="30" fill="#7a3417"/>
+
+    <!-- Dackel-Silhouette -->
+    <g fill="#faf3e8">
+      <!-- Schwanz -->
+      <path d="M41 99 L33 92 L35 97 L41 102 Z"/>
+      <!-- Körper -->
+      <rect x="40" y="97" width="34" height="8" rx="4"/>
+      <!-- Kopf -->
+      <circle cx="76" cy="96" r="5.5"/>
+      <!-- Schnauze -->
+      <rect x="79" y="95" width="7" height="3.4" rx="1.7"/>
+      <!-- Ohr -->
+      <ellipse cx="73.5" cy="95" rx="2.4" ry="4" transform="rotate(-12 73.5 95)"/>
+      <!-- Beine -->
+      <rect x="45" y="104" width="3.2" height="7" rx="1.2"/>
+      <rect x="52" y="104" width="3.2" height="7" rx="1.2"/>
+      <rect x="64" y="104" width="3.2" height="7" rx="1.2"/>
+      <rect x="70" y="104" width="3.2" height="7" rx="1.2"/>
+    </g>
+  </g>
+
+  <!-- Ring -->
+  <circle cx="60" cy="60" r="54" fill="none" stroke="#faf3e8" stroke-width="2.5" opacity="0.9"/>
+</svg>
