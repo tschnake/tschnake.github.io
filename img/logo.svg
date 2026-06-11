@@ -1,0 +1,42 @@
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo: Dackel">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c2632f"/>
+      <stop offset="1" stop-color="#8c3d1d"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="60" cy="60" r="54" fill="url(#bg)"/>
+
+  <!-- kleines Herz über dem Rücken -->
+  <path d="M59 44 C51 38 54 31 59 35 C64 31 67 38 59 44 Z" fill="#faf3e8" opacity="0.92"/>
+
+  <!-- Dackel -->
+  <g fill="#faf3e8">
+    <!-- Schwanz -->
+    <path d="M36 62 C28 60 26 49 33 47 C31 51 33 57 39 60 Z"/>
+    <!-- Körper -->
+    <rect x="36" y="58" width="46" height="13" rx="6.5"/>
+    <!-- Kopf -->
+    <circle cx="85" cy="56" r="9"/>
+    <!-- Schnauze -->
+    <rect x="91" y="57" width="13" height="6" rx="3"/>
+    <!-- Ohr -->
+    <ellipse cx="83" cy="51" rx="4" ry="8.5" transform="rotate(-14 83 51)"/>
+    <!-- Beine -->
+    <rect x="42" y="70" width="5.5" height="15" rx="2.5"/>
+    <rect x="53" y="70" width="5.5" height="15" rx="2.5"/>
+    <rect x="66" y="70" width="5.5" height="15" rx="2.5"/>
+    <rect x="76" y="70" width="5.5" height="15" rx="2.5"/>
+  </g>
+
+  <!-- Auge & Nase -->
+  <circle cx="86" cy="54" r="1.7" fill="#8c3d1d"/>
+  <circle cx="103" cy="60" r="1.7" fill="#8c3d1d"/>
+
+  <!-- Bodenlinie -->
+  <line x1="36" y1="87" x2="90" y2="87" stroke="#faf3e8" stroke-width="2" opacity="0.5"/>
+
+  <!-- Ring -->
+  <circle cx="60" cy="60" r="54" fill="none" stroke="#faf3e8" stroke-width="2.5" opacity="0.9"/>
+</svg>
