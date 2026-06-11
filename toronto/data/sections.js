@@ -28,8 +28,7 @@
 
 window.GUIDE_DATA = {
   title: "Toronto-Leitfaden: Aktivitäten, Communitys & berufliche Netzwerke",
-  subtitle:
-    "Für eine deutschsprachige Politikwissenschaftlerin mit Neugeborenem und einem Dackel",
+  subtitle: "Für Anna",
   period: "September 2026 – März 2027",
 
   /* --- Kurzfassung: hervorgehobener Kasten oben ------------------------- */
