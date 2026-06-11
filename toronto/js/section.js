@@ -54,7 +54,7 @@
     var logo = el("img", "page-head__logo");
     logo.src = LOGO;
     logo.alt = "Toronto-Leitfaden";
-    logo.width = 52; logo.height = 52;
+    logo.width = 64; logo.height = 64;
     home.appendChild(logo);
     home.appendChild(el("span", null, "Toronto-Leitfaden"));
     bar.appendChild(home);

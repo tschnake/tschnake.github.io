@@ -70,7 +70,7 @@ strong { color: var(--ink); }
   border-bottom: 1px solid var(--accent-soft);
 }
 .hero__logo {
-  width: clamp(150px, 40vw, 200px);
+  width: clamp(172px, 44vw, 232px);
   height: auto;
   margin-bottom: 10px;
   filter: drop-shadow(0 5px 12px rgba(80, 50, 20, 0.18));
@@ -220,7 +220,7 @@ strong { color: var(--ink); }
   font-family: system-ui, sans-serif;
   font-weight: 600;
 }
-.page-head__logo { width: 48px; height: 48px; }
+.page-head__logo { width: 64px; height: 64px; }
 .page-head__back {
   color: var(--accent-deep);
   text-decoration: none;
