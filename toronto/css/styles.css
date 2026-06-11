@@ -1,0 +1,257 @@
+/* ============================================================================
+   styles.css — Toronto-Leitfaden
+   ----------------------------------------------------------------------------
+   Gliederung (zum gezielten Ändern):
+     1. Design-Tokens (Farben, Maße) als CSS-Variablen
+     2. Grundlagen & Typografie
+     3. Eingangs-/Heldensektion (.hero)
+     4. Boxen: Kurzfassung & Vorbehalte (.box)
+     5. Navigation / Themen-Übersicht (.nav, .nav-card)
+     6. Themenblöcke (.topic, .item-list, .seasonal)
+     7. Footer
+     8. Responsives Verhalten (Media Queries)
+   Warme, dezente Palette; gut lesbare Typografie; mobil zuerst gedacht.
+   ========================================================================== */
+
+/* -- 1. Design-Tokens -------------------------------------------------- */
+:root {
+  --bg:          #fbf7f0;   /* warmes Cremeweiß */
+  --surface:     #ffffff;
+  --ink:         #2e2a25;   /* dunkles Warmgrau für Text */
+  --ink-soft:    #5d564d;
+  --accent:      #b4532a;   /* warmes Terrakotta */
+  --accent-deep: #8c3d1d;
+  --accent-soft: #f3e3d8;
+  --highlight:   #f7eede;   /* Kurzfassungs-Kasten */
+  --caveat:      #f1ede6;   /* Vorbehalte-Kasten (dezent) */
+  --line:        #e6ddd0;
+  --radius:      12px;
+  --maxw:        860px;
+  --shadow:      0 2px 10px rgba(80, 50, 20, 0.07);
+}
+
+/* -- 2. Grundlagen & Typografie ---------------------------------------- */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: "Georgia", "Iowan Old Style", "Palatino", serif;
+  font-size: 18px;
+  line-height: 1.65;
+  -webkit-text-size-adjust: 100%;
+}
+
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px 64px;
+}
+
+a { color: var(--accent-deep); text-decoration: underline; text-underline-offset: 2px; }
+a:hover { color: var(--accent); }
+
+strong { color: var(--ink); }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* -- 3. Eingangs-/Heldensektion ---------------------------------------- */
+.hero {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%);
+  color: #fff;
+  padding: 56px 20px 48px;
+  text-align: center;
+}
+.hero__period {
+  margin: 0 0 14px;
+  font-family: system-ui, sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+.hero__title {
+  max-width: var(--maxw);
+  margin: 0 auto 14px;
+  font-size: clamp(1.7rem, 4.5vw, 2.7rem);
+  line-height: 1.2;
+}
+.hero__subtitle {
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  font-style: italic;
+  opacity: 0.95;
+}
+
+/* -- 4. Boxen: Kurzfassung & Vorbehalte -------------------------------- */
+.box {
+  border-radius: var(--radius);
+  padding: 22px 26px;
+  margin: 36px 0;
+}
+.box__title {
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+}
+.box--highlight {
+  background: var(--highlight);
+  border: 1px solid var(--accent-soft);
+  box-shadow: var(--shadow);
+  margin-top: -28px;            /* überlappt leicht die Heldensektion */
+  position: relative;
+}
+.box--caveat {
+  background: var(--caveat);
+  border: 1px solid var(--line);
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+.box--caveat .box__title { color: var(--ink-soft); }
+
+/* -- 5. Navigation / Themen-Übersicht ---------------------------------- */
+.nav { margin: 36px 0; }
+.nav__search { margin-bottom: 16px; }
+#search {
+  width: 100%;
+  padding: 13px 16px;
+  font-size: 1rem;
+  font-family: system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+#search:focus { outline: 2px solid var(--accent); border-color: var(--accent); }
+.nav__count {
+  display: inline-block;
+  margin-top: 8px;
+  font-family: system-ui, sans-serif;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.nav__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+}
+.nav-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--ink);
+  font-family: system-ui, sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.25;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+}
+.nav-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: var(--accent);
+  color: var(--ink);
+}
+.nav-card.is-active {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.nav-card__num {
+  flex: 0 0 auto;
+  width: 26px; height: 26px;
+  display: grid; place-items: center;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* -- 6. Themenblöcke --------------------------------------------------- */
+.topic {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px 28px;
+  margin: 22px 0;
+  scroll-margin-top: 16px;
+}
+.topic__title {
+  margin: 0 0 14px;
+  font-size: 1.4rem;
+  line-height: 1.25;
+}
+.topic__num {
+  display: inline-grid; place-items: center;
+  width: 32px; height: 32px;
+  margin-right: 6px;
+  background: var(--accent-soft);
+  color: var(--accent-deep);
+  border-radius: 50%;
+  font-size: 0.95rem;
+  font-weight: 700;
+  vertical-align: middle;
+}
+.topic__intro {
+  margin: 0 0 16px;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.group__heading {
+  margin: 22px 0 8px;
+  font-size: 1.08rem;
+  color: var(--accent-deep);
+}
+.group__sub {
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.item-list { margin: 0; padding-left: 1.3em; }
+.item-list > li { margin-bottom: 14px; }
+.sub-list { margin: 8px 0 4px; padding-left: 1.2em; }
+.sub-list > li { margin-bottom: 8px; }
+
+/* Saisonaler Hinweis innerhalb eines Themenblocks */
+.seasonal {
+  margin-top: 18px;
+  padding: 12px 16px;
+  background: var(--accent-soft);
+  border-left: 4px solid var(--accent);
+  border-radius: 6px;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+
+/* Empfehlungen erben .topic, bekommen aber einen wärmeren Rand */
+.topic--recommend { border-color: var(--accent-soft); border-left: 4px solid var(--accent); }
+
+/* -- 7. Footer --------------------------------------------------------- */
+.site-footer {
+  text-align: center;
+  padding: 28px 20px;
+  font-family: system-ui, sans-serif;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  border-top: 1px solid var(--line);
+}
+
+/* -- 8. Responsives Verhalten ------------------------------------------ */
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  .hero { padding: 40px 16px 36px; }
+  .topic { padding: 20px 18px; }
+  .box { padding: 18px 18px; }
+  .nav__cards { grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); }
+}

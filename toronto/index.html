@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Titel wird aus den Daten gesetzt; Fallback hier für No-JS / Tab-Anzeige -->
+  <title>Toronto-Leitfaden 2026–2027</title>
+  <meta name="description" content="Toronto-Leitfaden: Aktivitäten, Communitys & berufliche Netzwerke (September 2026 – März 2027).">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ================= Eingangs-/Heldensektion =================
+       Inhalt kommt aus renderHero() in js/main.js -->
+  <header id="hero" class="hero"></header>
+
+  <main class="container">
+
+    <!-- ================= Kurzfassung (Kasten oben) =================
+         Befüllt durch renderKurzfassung() -->
+    <section id="kurzfassung" class="box box--highlight"></section>
+
+    <!-- ================= Navigation / Themen-Übersicht =================
+         Suchfeld + Kachelraster; Karten kommen aus renderNav() -->
+    <nav class="nav" aria-label="Themenübersicht">
+      <div class="nav__search">
+        <label for="search" class="visually-hidden">Nach Interessensgebiet suchen</label>
+        <input
+          id="search"
+          type="search"
+          placeholder="Nach Interessensgebiet suchen … (z. B. Klima, Kinder, Feminismus)"
+          autocomplete="off">
+        <span id="search-count" class="nav__count" aria-live="polite"></span>
+      </div>
+      <div id="nav-cards" class="nav__cards"></div>
+    </nav>
+
+    <!-- ================= Die 14 Themenblöcke =================
+         Befüllt durch renderSections() -->
+    <div id="sections"></div>
+
+    <!-- ================= Empfehlungen (gestaffelt) =================
+         Befüllt durch renderEmpfehlungen() -->
+    <section id="empfehlungen" class="topic topic--recommend"></section>
+
+    <!-- ================= Vorbehalte (Hinweis-Kasten unten) =================
+         Befüllt durch renderVorbehalte() -->
+    <section id="vorbehalte" class="box box--caveat"></section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Toronto-Leitfaden · September 2026 – März 2027 · <a href="../">Zur Startseite</a></p>
+  </footer>
+
+  <!-- Daten zuerst, dann der Renderer -->
+  <script src="data/sections.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
