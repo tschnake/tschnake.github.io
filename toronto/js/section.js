@@ -18,7 +18,7 @@
   var D = window.GUIDE_DATA;
   // Die Section-Seiten liegen in toronto/sections/ — Assets daher über ../
   var BASE = "../";
-  var LOGO = BASE + "img/logo.svg";
+  var LOGO = BASE + "img/toronto_dackel.png";
 
   function el(tag, className, html) {
     var node = document.createElement(tag);

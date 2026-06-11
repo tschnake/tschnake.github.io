@@ -16,7 +16,7 @@
   "use strict";
 
   var D = window.GUIDE_DATA;
-  var LOGO = "img/logo.svg";
+  var LOGO = "img/toronto_dackel.png";
 
   function el(tag, className, html) {
     var node = document.createElement(tag);

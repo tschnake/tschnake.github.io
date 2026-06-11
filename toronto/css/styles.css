@@ -16,16 +16,17 @@
 
 /* -- 1. Design-Tokens -------------------------------------------------- */
 :root {
-  --bg:          #fbf7f0;
+  --bg:          #faf6ed;
   --surface:     #ffffff;
   --ink:         #2e2a25;
   --ink-soft:    #5d564d;
-  --accent:      #b4532a;
-  --accent-deep: #8c3d1d;
-  --accent-soft: #f3e3d8;
-  --highlight:   #f7eede;
-  --caveat:      #f1ede6;
-  --line:        #e6ddd0;
+  --accent:      #b06a45;
+  --accent-deep: #8a4d33;
+  --accent-soft: #efe4d4;
+  --highlight:   #f4ead9;
+  --caveat:      #f0eadf;
+  --line:        #e8ddcc;
+  --cream-band:  linear-gradient(160deg, #f6ecdb 0%, #efe1cc 100%);
   --radius:      14px;
   --maxw:        860px;
   --shadow:      0 2px 10px rgba(80, 50, 20, 0.07);
@@ -62,15 +63,17 @@ strong { color: var(--ink); }
 
 /* -- 3. Eingangs-/Heldensektion (Startseite) --------------------------- */
 .hero {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%);
-  color: #fff;
-  padding: 48px 20px 44px;
+  background: var(--cream-band);
+  color: var(--ink);
+  padding: 40px 20px 38px;
   text-align: center;
+  border-bottom: 1px solid var(--accent-soft);
 }
 .hero__logo {
-  width: 120px; height: 120px;
-  margin-bottom: 18px;
-  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.25));
+  width: clamp(150px, 40vw, 200px);
+  height: auto;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 5px 12px rgba(80, 50, 20, 0.18));
 }
 .hero__period {
   margin: 0 0 12px;
@@ -78,20 +81,21 @@ strong { color: var(--ink); }
   font-size: 0.85rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  opacity: 0.9;
+  color: var(--accent);
 }
 .hero__title {
   max-width: var(--maxw);
   margin: 0 auto 14px;
   font-size: clamp(1.7rem, 4.5vw, 2.7rem);
   line-height: 1.2;
+  color: var(--accent-deep);
 }
 .hero__subtitle {
   max-width: 640px;
   margin: 0 auto;
   font-size: 1.05rem;
   font-style: italic;
-  opacity: 0.95;
+  color: var(--ink-soft);
 }
 
 /* -- 4. Boxen: Kurzfassung & Vorbehalte -------------------------------- */
@@ -194,9 +198,10 @@ strong { color: var(--ink); }
 
 /* -- 6. Kopfbereich der Einzelseiten ----------------------------------- */
 .page-head {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%);
-  color: #fff;
-  padding: 20px 20px 40px;
+  background: var(--cream-band);
+  color: var(--ink);
+  padding: 20px 20px 38px;
+  border-bottom: 1px solid var(--accent-soft);
 }
 .page-head__bar {
   max-width: var(--maxw);
@@ -210,23 +215,23 @@ strong { color: var(--ink); }
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  color: #fff;
+  color: var(--accent-deep);
   text-decoration: none;
   font-family: system-ui, sans-serif;
   font-weight: 600;
 }
-.page-head__logo { width: 52px; height: 52px; }
+.page-head__logo { width: 48px; height: 48px; }
 .page-head__back {
-  color: #fff;
+  color: var(--accent-deep);
   text-decoration: none;
   font-family: system-ui, sans-serif;
   font-size: 0.9rem;
   padding: 7px 14px;
-  border: 1px solid rgba(255,255,255,0.55);
+  border: 1px solid var(--accent);
   border-radius: 999px;
   white-space: nowrap;
 }
-.page-head__back:hover { color: #fff; background: rgba(255,255,255,0.16); }
+.page-head__back:hover { background: var(--accent-soft); }
 .page-head__badgewrap {
   max-width: var(--maxw);
   margin: 6px auto 14px;
@@ -234,7 +239,7 @@ strong { color: var(--ink); }
 .page-head__badge {
   width: 84px; height: 84px;
   display: block;
-  filter: drop-shadow(0 5px 12px rgba(0,0,0,0.22));
+  filter: drop-shadow(0 5px 12px rgba(80, 50, 20, 0.18));
 }
 .page-head__eyebrow {
   max-width: var(--maxw);
@@ -243,20 +248,21 @@ strong { color: var(--ink); }
   font-size: 0.8rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  opacity: 0.9;
+  color: var(--accent);
 }
 .page-head__title {
   max-width: var(--maxw);
   margin: 0 auto 12px;
   font-size: clamp(1.6rem, 4vw, 2.4rem);
   line-height: 1.2;
+  color: var(--accent-deep);
 }
 .page-head__lead {
   max-width: var(--maxw);
   margin: 0 auto;
   font-size: 1.1rem;
   font-style: italic;
-  opacity: 0.96;
+  color: var(--ink-soft);
 }
 
 /* -- 7. Abschnittsinhalt ----------------------------------------------- */

@@ -8,14 +8,15 @@
 
 /* -- 1. Tokens --------------------------------------------------------- */
 :root {
-  --bg:          #fbf7f0;
+  --bg:          #faf6ed;
   --surface:     #ffffff;
   --ink:         #2e2a25;
   --ink-soft:    #5d564d;
-  --accent:      #b4532a;
-  --accent-deep: #8c3d1d;
-  --accent-soft: #f3e3d8;
-  --line:        #e6ddd0;
+  --accent:      #b06a45;
+  --accent-deep: #8a4d33;
+  --accent-soft: #efe4d4;
+  --bg2:         #f3e7d5;
+  --line:        #e8ddcc;
   --radius:      14px;
   --maxw:        780px;
   --shadow:      0 2px 10px rgba(80, 50, 20, 0.07);
@@ -37,19 +38,18 @@ a { color: var(--accent-deep); }
 
 /* -- 3. Hero + Logo ---------------------------------------------------- */
 .hero {
-  /* exakt die Hintergrundfarbe des Logo-PNGs, damit der quadratische
-     Bildrand nahtlos verschwindet */
-  background: #f9f0df;
+  /* milde, cremefarbene Fläche statt grellem Terrakotta */
+  background: linear-gradient(160deg, #f6ecdb 0%, #efe1cc 100%);
   color: var(--ink);
-  padding: 36px 20px 36px;
+  padding: 40px 20px 38px;
   text-align: center;
   border-bottom: 1px solid var(--accent-soft);
 }
 .hero__logo {
-  /* großes allgemeines Logo; KEIN drop-shadow (würde das Quadrat zeigen) */
-  width: clamp(180px, 46vw, 260px);
+  width: clamp(150px, 40vw, 190px);
   height: auto;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  filter: drop-shadow(0 5px 12px rgba(80, 50, 20, 0.18));
 }
 .hero__title { margin: 0 0 10px; font-size: clamp(1.8rem, 5vw, 2.6rem); color: var(--accent-deep); }
 .hero__subtitle { margin: 0; font-size: 1.05rem; font-style: italic; color: var(--ink-soft); }
