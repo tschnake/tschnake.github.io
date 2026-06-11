@@ -20,9 +20,9 @@
   --surface:     #ffffff;
   --ink:         #2e2a25;
   --ink-soft:    #5d564d;
-  --accent:      #b06a45;
-  --accent-deep: #8a4d33;
-  --accent-soft: #efe4d4;
+  --accent:      #c0551f;
+  --accent-deep: #983f12;
+  --accent-soft: #f2e2d0;
   --highlight:   #f4ead9;
   --caveat:      #f0eadf;
   --line:        #e8ddcc;
@@ -70,9 +70,9 @@ strong { color: var(--ink); }
   border-bottom: 1px solid var(--accent-soft);
 }
 .hero__logo {
-  width: clamp(172px, 44vw, 232px);
+  width: clamp(200px, 50vw, 280px);
   height: auto;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   filter: drop-shadow(0 5px 12px rgba(80, 50, 20, 0.18));
 }
 .hero__period {
@@ -220,7 +220,7 @@ strong { color: var(--ink); }
   font-family: system-ui, sans-serif;
   font-weight: 600;
 }
-.page-head__logo { width: 64px; height: 64px; }
+.page-head__logo { width: 84px; height: 84px; }
 .page-head__back {
   color: var(--accent-deep);
   text-decoration: none;
