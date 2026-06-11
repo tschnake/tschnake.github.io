@@ -68,13 +68,21 @@
   function renderCards() {
     var grid = document.getElementById("nav-cards");
     cardEntries().forEach(function (e) {
-      // Echter Seitenwechsel: Link auf eine eigene HTML-Datei.
+      // Echter Seitenwechsel: Link auf eine eigene HTML-Datei in sections/.
       var card = el("a", "card" + (e.special ? " card--special" : ""));
-      card.href = e.id + ".html";
+      card.href = "sections/" + e.id + ".html";
       card.setAttribute("data-target", e.id);
       card.setAttribute("data-search", (e.title + " " + (e.lead || "")).toLowerCase());
 
-      card.appendChild(el("span", "card__icon", e.icon || "•"));
+      // Pro-Section-Logo (img/sections/<id>.svg); Emoji bleibt als alt-Text.
+      var icon = el("span", "card__icon");
+      var img = document.createElement("img");
+      img.src = "img/sections/" + e.id + ".svg";
+      img.alt = e.icon || "";
+      img.width = 64; img.height = 64;
+      icon.appendChild(img);
+      card.appendChild(icon);
+
       var body = el("span", "card__body");
       body.appendChild(el("span", "card__title", e.title));
       if (e.lead) body.appendChild(el("span", "card__lead", e.lead));

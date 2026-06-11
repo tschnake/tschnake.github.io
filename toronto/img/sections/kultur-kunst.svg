@@ -1,0 +1,11 @@
+<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Kultur und Kunst">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c2632f"/>
+      <stop offset="1" stop-color="#8c3d1d"/>
+    </linearGradient>
+  </defs>
+  <circle cx="40" cy="40" r="38" fill="url(#g)"/>
+  <rect x="22" y="24" width="36" height="30" rx="3" fill="none" stroke="#faf3e8" stroke-width="3"/><circle cx="32" cy="34" r="3.2" fill="#faf3e8"/><path d="M25 51 l10 -12 l7 7 l6 -5 l9 10 z" fill="#faf3e8"/>
+  <circle cx="40" cy="40" r="38" fill="none" stroke="#faf3e8" stroke-width="2" opacity="0.85"/>
+</svg>

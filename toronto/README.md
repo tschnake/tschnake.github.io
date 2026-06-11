@@ -19,8 +19,10 @@ Worte und der Abschnittsinhalt.
 ```
 toronto/
 ├── index.html               # Startseite: Logo-Hero, Kurzfassung, große Karten
-├── <thema>.html             # 16 Einzelseiten (klimapolitik.html, natur.html, …),
-│                            #   schlanke Gerüste mit <body data-section="…">
+├── sections/                # die Einzelseiten liegen im Unterordner (nicht im Hauptordner)
+│   ├── klimapolitik.html    #   16 schlanke Gerüste mit <body data-section="…">,
+│   ├── natur.html           #   Assets über ../  (z. B. ../css/styles.css)
+│   └── … (16 Stück)
 ├── css/
 │   └── styles.css           # Styling, in nummerierte Abschnitte gegliedert
 ├── js/
@@ -29,7 +31,8 @@ toronto/
 ├── data/
 │   └── sections.js          # >>> HIER die Inhalte pflegen <<<
 ├── img/
-│   └── logo.svg             # Logo (Toronto-Skyline + Dackel) — austauschbar
+│   ├── logo.svg             # allgemeines Logo (Toronto-Skyline + Dackel)
+│   └── sections/            # ein Logo je Abschnitt (klimapolitik.svg, …) — austauschbar
 └── README.md
 ```
 
@@ -41,16 +44,22 @@ JS-Dateien musst du dafür nicht anfassen. Jeder Abschnitt ist ein Objekt mit
 `intro`, `items` (bzw. `groups`) und optionalem `seasonal`-Hinweis; das Schema
 ist oben in der Datei kommentiert.
 
-**Einen neuen Abschnitt hinzufügen:** ein Objekt in `sections` ergänzen und eine
-gleichnamige `<id>.html` anlegen (am einfachsten eine vorhandene Themenseite
-kopieren und nur `data-section="<id>"` anpassen). Die Karte auf der Startseite
-erscheint dann automatisch.
+**Einen neuen Abschnitt hinzufügen:** ein Objekt in `sections` ergänzen, eine
+gleichnamige `sections/<id>.html` anlegen (am einfachsten eine vorhandene
+Themenseite kopieren und nur `data-section="<id>"` anpassen) und ein Logo
+`img/sections/<id>.svg` hinterlegen. Karte und Section-Logo erscheinen dann
+automatisch (der Logo-Pfad wird aus der `id` abgeleitet).
 
-### Logo tauschen
+### Logos tauschen
 
-`img/logo.svg` ist ein eigenständiges SVG. Du kannst es durch ein anderes Bild
-ersetzen (gleichen Dateinamen behalten) oder die Pfade `img/logo.svg` in
-`js/main.js` und `js/section.js` anpassen.
+Alle Logos sind eigenständige SVG-Dateien und als schlichte Platzhalter gedacht:
+
+- `img/logo.svg` — allgemeines Logo (Hero + Kopf jeder Unterseite)
+- `img/sections/<id>.svg` — ein Logo pro Abschnitt (Karte + Section-Kopf)
+
+Du kannst jede Datei durch ein anderes Bild ersetzen (gleichen Dateinamen
+behalten, z. B. ein mit einem Bildgenerator erzeugtes Motiv) — Code-Änderungen
+sind nicht nötig.
 
 **Warum `sections.js` und nicht `sections.json`?** Browser blockieren
 `fetch()` auf lokale Dateien über das `file://`-Protokoll (CORS). Läge der

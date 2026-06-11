@@ -1,0 +1,11 @@
+<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lehrstühle und Kontakte">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c2632f"/>
+      <stop offset="1" stop-color="#8c3d1d"/>
+    </linearGradient>
+  </defs>
+  <circle cx="40" cy="40" r="38" fill="url(#g)"/>
+  <polygon points="40,25 59,33 40,41 21,33" fill="#faf3e8"/><path d="M30 37 L30 47 C30 51 50 51 50 47 L50 37" fill="none" stroke="#faf3e8" stroke-width="3"/><line x1="59" y1="33" x2="59" y2="46" stroke="#faf3e8" stroke-width="2"/><circle cx="59" cy="48" r="2.5" fill="#faf3e8"/>
+  <circle cx="40" cy="40" r="38" fill="none" stroke="#faf3e8" stroke-width="2" opacity="0.85"/>
+</svg>

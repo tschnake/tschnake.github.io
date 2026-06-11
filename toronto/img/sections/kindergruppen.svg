@@ -1,0 +1,11 @@
+<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Kindergruppen">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c2632f"/>
+      <stop offset="1" stop-color="#8c3d1d"/>
+    </linearGradient>
+  </defs>
+  <circle cx="40" cy="40" r="38" fill="url(#g)"/>
+  <circle cx="40" cy="41" r="16" fill="#faf3e8"/><path d="M39 25 q5 -5 9 -1" stroke="#faf3e8" stroke-width="3" fill="none"/><circle cx="34" cy="39" r="2" fill="#8c3d1d"/><circle cx="46" cy="39" r="2" fill="#8c3d1d"/><path d="M34 47 q6 5 12 0" stroke="#8c3d1d" stroke-width="2" fill="none"/>
+  <circle cx="40" cy="40" r="38" fill="none" stroke="#faf3e8" stroke-width="2" opacity="0.85"/>
+</svg>

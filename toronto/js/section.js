@@ -16,7 +16,9 @@
   "use strict";
 
   var D = window.GUIDE_DATA;
-  var LOGO = "img/logo.svg";
+  // Die Section-Seiten liegen in toronto/sections/ — Assets daher über ../
+  var BASE = "../";
+  var LOGO = BASE + "img/logo.svg";
 
   function el(tag, className, html) {
     var node = document.createElement(tag);
@@ -42,13 +44,13 @@
     return list;
   }
 
-  // Kopfbereich: Logo, Zurück-Link, Eyebrow, Titel, einführende Worte (lead).
-  function renderHead(eyebrow, title, lead) {
+  // Kopfbereich: Marke + Zurück-Link, Section-Logo, Eyebrow, Titel, Lead.
+  function renderHead(eyebrow, title, lead, logoUrl) {
     var head = document.getElementById("page-head");
 
     var bar = el("div", "page-head__bar");
     var home = el("a", "page-head__home");
-    home.href = "index.html";
+    home.href = BASE + "index.html";
     var logo = el("img", "page-head__logo");
     logo.src = LOGO;
     logo.alt = "Toronto-Leitfaden";
@@ -58,10 +60,21 @@
     bar.appendChild(home);
 
     var back = el("a", "page-head__back");
-    back.href = "index.html";
+    back.href = BASE + "index.html";
     back.innerHTML = "← Alle Themen";
     bar.appendChild(back);
     head.appendChild(bar);
+
+    // großes Section-Logo (links bündig mit dem Titel)
+    if (logoUrl) {
+      var wrap = el("div", "page-head__badgewrap");
+      var badge = el("img", "page-head__badge");
+      badge.src = logoUrl;
+      badge.alt = "";
+      badge.width = 84; badge.height = 84;
+      wrap.appendChild(badge);
+      head.appendChild(wrap);
+    }
 
     if (eyebrow) head.appendChild(el("p", "page-head__eyebrow", eyebrow));
     head.appendChild(el("h1", "page-head__title", title));
@@ -71,7 +84,7 @@
   /* -- Normale Themenseite ---------------------------------------------- */
   function renderTopic(s) {
     document.title = s.title + " · Toronto-Leitfaden";
-    renderHead("Abschnitt " + s.num, s.title, s.lead);
+    renderHead("Abschnitt " + s.num, s.title, s.lead, BASE + "img/sections/" + s.id + ".svg");
 
     var root = document.getElementById("section-root");
     var article = el("article", "topic-body");
@@ -102,7 +115,7 @@
   function renderEmpfehlungen() {
     var meta = D.extras.empfehlungen;
     document.title = meta.title + " · Toronto-Leitfaden";
-    renderHead("Übersicht", meta.title + " (gestaffelt & praktisch)", meta.lead);
+    renderHead("Übersicht", meta.title + " (gestaffelt & praktisch)", meta.lead, BASE + "img/sections/empfehlungen.svg");
 
     var root = document.getElementById("section-root");
     var article = el("article", "topic-body");
@@ -119,7 +132,7 @@
   function renderVorbehalte() {
     var meta = D.extras.vorbehalte;
     document.title = meta.title + " · Toronto-Leitfaden";
-    renderHead("Hinweis", meta.title, meta.lead);
+    renderHead("Hinweis", meta.title, meta.lead, BASE + "img/sections/vorbehalte.svg");
 
     var root = document.getElementById("section-root");
     var article = el("article", "topic-body box--caveat");
@@ -143,7 +156,7 @@
     var s = D.sections.filter(function (x) { return x.id === id; })[0];
     if (!s) {
       document.getElementById("section-root").innerHTML =
-        '<p>Abschnitt „' + id + '" nicht gefunden. <a href="index.html">Zur Übersicht</a>.</p>';
+        '<p>Abschnitt „' + id + '" nicht gefunden. <a href="' + BASE + 'index.html">Zur Übersicht</a>.</p>';
       return;
     }
     renderTopic(s);

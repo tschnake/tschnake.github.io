@@ -1,0 +1,11 @@
+<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Konferenzen">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c2632f"/>
+      <stop offset="1" stop-color="#8c3d1d"/>
+    </linearGradient>
+  </defs>
+  <circle cx="40" cy="40" r="38" fill="url(#g)"/>
+  <rect x="35" y="22" width="10" height="21" rx="5" fill="#faf3e8"/><path d="M28 39 a12 12 0 0 0 24 0" fill="none" stroke="#faf3e8" stroke-width="3"/><line x1="40" y1="51" x2="40" y2="58" stroke="#faf3e8" stroke-width="3"/><line x1="32" y1="58" x2="48" y2="58" stroke="#faf3e8" stroke-width="3"/>
+  <circle cx="40" cy="40" r="38" fill="none" stroke="#faf3e8" stroke-width="2" opacity="0.85"/>
+</svg>
