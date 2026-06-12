@@ -44,6 +44,70 @@
     return list;
   }
 
+  // --- Strukturierte "Place Cards" (Tags + einheitliche Felder + Karte) ---
+
+  // Eine Meta-Zeile, z. B. "WANN: laufend".
+  function metaRow(label, value) {
+    var row = el("div", "meta-row");
+    row.appendChild(el("span", "meta-label", label));
+    row.appendChild(document.createTextNode(value));
+    return row;
+  }
+
+  // Mini-Karte: schlüsselloser Google-Maps-Embed + Link zum Öffnen.
+  function renderMap(map) {
+    var wrap = el("div", "place-card__map");
+    var q = encodeURIComponent(map.q);
+
+    var frame = document.createElement("iframe");
+    frame.src = "https://www.google.com/maps?q=" + q + "&output=embed";
+    frame.loading = "lazy";
+    frame.title = "Karte: " + map.q;
+    frame.setAttribute("referrerpolicy", "no-referrer-when-downgrade");
+    wrap.appendChild(frame);
+
+    var link = el("a", "place-card__maplink",
+      "📍 Auf Google Maps öffnen" + (map.addr ? " · " + map.addr : ""));
+    link.href = "https://www.google.com/maps/search/?api=1&query=" + q;
+    link.target = "_blank"; link.rel = "noopener";
+    wrap.appendChild(link);
+    return wrap;
+  }
+
+  // Eine Zelle (Ort/Anlaufstelle) im einheitlichen Format.
+  function renderPlaceCard(item) {
+    var card = el("article", "place-card");
+
+    var head = el("div", "place-card__head");
+    head.appendChild(el("h3", "place-card__name", item.name));
+    if (item.tags && item.tags.length) {
+      var tagRow = el("div", "tag-row");
+      item.tags.forEach(function (t) {
+        tagRow.appendChild(el("span", "tag-chip", "#" + t));
+      });
+      head.appendChild(tagRow);
+    }
+    card.appendChild(head);
+
+    if (item.intro) card.appendChild(el("p", "place-card__intro", item.intro));
+
+    var meta = el("div", "place-card__meta");
+    if (item.wann) meta.appendChild(metaRow("Wann", item.wann));
+    if (item.fokus) meta.appendChild(metaRow("Fokus", item.fokus));
+    if (meta.childNodes.length) card.appendChild(meta);
+
+    if (item.href) {
+      var p = el("p", "place-card__link");
+      var a = el("a", null, item.hrefLabel || item.href);
+      a.href = item.href; a.target = "_blank"; a.rel = "noopener";
+      p.appendChild(a);
+      card.appendChild(p);
+    }
+
+    if (item.map) card.appendChild(renderMap(item.map));
+    return card;
+  }
+
   // Kopfbereich: Marke + Zurück-Link, Section-Logo, Eyebrow, Titel, Lead.
   function renderHead(eyebrow, title, lead, logoUrl) {
     var head = document.getElementById("page-head");
@@ -99,7 +163,15 @@
         article.appendChild(renderItemList(g.items, g.ordered));
       });
     } else if (s.items) {
-      article.appendChild(renderItemList(s.items, false));
+      if (s.items[0] && s.items[0].name) {
+        // neues, strukturiertes Format -> Place Cards
+        var list = el("div", "place-list");
+        s.items.forEach(function (it) { list.appendChild(renderPlaceCard(it)); });
+        article.appendChild(list);
+      } else {
+        // altes Format -> Aufzählung
+        article.appendChild(renderItemList(s.items, false));
+      }
     }
 
     if (s.seasonal) {
