@@ -20,22 +20,6 @@
   var BASE = "../";
   var LOGO = BASE + "img/toronto_dackel.png";
 
-  // Fun-Reihenfolge (s. main.js) -> "Fun-Stufe" als Eyebrow.
-  var FUN_ORDER = [
-    "natur", "tagesausfluege", "stadt", "kultur-kunst", "sport-yoga",
-    "kontakte", "lesegruppen", "literatur-schreiben", "kindergruppen",
-    "indigene-geschichte", "alltag",
-    "feminismus", "ki-gesellschaft", "konferenzen", "lehrstuehle-kontakte",
-    "sozialpolitik-ehrenamt", "klimapolitik",
-  ];
-  function funTier(id) {
-    var i = FUN_ORDER.indexOf(id);
-    if (i < 0) return "Rubrik";
-    if (i < 5) return "Mehr Fun";
-    if (i < 11) return "Mittendrin";
-    return "Eher Engagement";
-  }
-
   function el(tag, className, html) {
     var node = document.createElement(tag);
     if (className) node.className = className;
@@ -175,7 +159,7 @@
   /* -- Normale Themenseite ---------------------------------------------- */
   function renderTopic(s) {
     document.title = s.title + " · Toronto-Leitfaden";
-    renderHead(funTier(s.id), s.title, s.lead, BASE + "img/sections/" + s.id + ".svg");
+    renderHead(null, s.title, s.lead, BASE + "img/sections/" + s.id + ".svg");
 
     var root = document.getElementById("section-root");
     var article = el("article", "topic-body");

@@ -33,12 +33,7 @@ window.GUIDE_DATA = {
 
   /* --- Willkommens-/Wegweiser-Box oben --------------------------------- */
   intro: {
-    lead: "Toronto steckt voller Möglichkeiten — von Parks, Ausflügen und Kultur über Familie und Community bis zu Forschung und Politik. Hier sind sie in 17 Rubriken gebündelt, sortiert von „am meisten Fun\" bis „eher Engagement\". Winter-Tipp (Sept–März): vieles verlagert sich nach drinnen — Indoor-Kultur, Spas und winterfeste Trails gibt es trotzdem reichlich.",
-    schnellstart: [
-      "<strong>Mit Baby zuerst:</strong> nächstes kostenloses EarlyON-Zentrum finden und den deutschsprachigen German Mamas & Papas beitreten.",
-      "<strong>Beruflich, gratis & sofort:</strong> POLCAN2 abonnieren, dem CPSA Women's Caucus beitreten und für die kostenlose SRI-Seminarreihe anmelden (online = babyfreundlich).",
-      "<strong>Einfach mal raus:</strong> ein German-Meetup am ersten Donnerstag oder ein Winterspaziergang mit Dackel (High Park, Cherry Beach).",
-    ],
+    lead: "Toronto steckt voller Möglichkeiten — von Parks, Ausflügen und Kultur über Familie und Community bis zu Forschung und Politik. Hier sind sie in 17 Rubriken gebündelt. Winter-Tipp (Sept–März): vieles verlagert sich nach drinnen — Indoor-Kultur, Spas und winterfeste Trails gibt es trotzdem reichlich.",
   },
 
   /* --- Meta für die Sonderseiten Empfehlungen & Vorbehalte -------------- */
@@ -75,6 +70,7 @@ window.GUIDE_DATA = {
         { name: "Live Green Toronto / Climate Action Map", tags: ["klima", "online"], intro: "Verzeichnis und Karte hunderter lokaler Klimaorganisationen.", wann: "Laufend.", fokus: "Info", href: "https://letstransformto.ca", hrefLabel: "letstransformto.ca" },
         { name: "Indigenous Climate Action", tags: ["klima", "indigen", "politik"], intro: "Von Indigenen geführte Organisation für Klimagerechtigkeit.", wann: "Laufend.", fokus: "Engagement", href: "https://indigenousclimateaction.com", hrefLabel: "indigenousclimateaction.com" },
         { name: "Environmental Governance Lab (Querverweis)", tags: ["klima", "wissenschaft"], intro: "Für den akademischen Blickwinkel siehe das Environmental Governance Lab in der Rubrik „Lehrstühle & Kontakte\".", wann: "—", fokus: "Wissenschaft", href: "lehrstuehle-kontakte.html", hrefLabel: "Zur Rubrik Lehrstühle" },
+        { name: "Parteipolitik zum Thema Klima (Querverweis)", tags: ["klima", "politik"], intro: "Wer Klimapolitik parteipolitisch angehen möchte, findet praktische Anschlüsse (NDP, Liberale, Equal Voice) in der Rubrik „Sozialpolitik & politisches Engagement\".", wann: "—", fokus: "Politik", href: "sozialpolitik-ehrenamt.html", hrefLabel: "Zur Rubrik Politik" },
       ],
       seasonal:
         'Die großen Mobilisierungen (Demos) konzentrieren sich auf Frühjahr/Herbst; der Winter ist die Zeit für Vorträge und Treffen. Die <strong>Toronto Climate Week</strong> findet im Juni statt (außerhalb des Zeitraums).',
@@ -88,13 +84,27 @@ window.GUIDE_DATA = {
       icon: "🤝",
       lead: "Deutschsprachige und internationale Netzwerke, um in Toronto schnell sozialen Anschluss zu finden.",
       intro: null,
-      items: [
-        { name: "German Meetup Toronto", tags: ["deutsch", "community", "fun"], intro: "Das größte deutsche Meetup Nordamerikas (3.700+ Mitglieder); typischer Pub-Abend am ersten Donnerstag im Sin & Redemption Pub (gegenüber der AGO), plus gemeinsame Events mit Generalkonsulat, Goethe-Institut und deutschen Schulen. (Deutsch + Englisch.)", wann: "Erster Donnerstag im Monat.", fokus: "Community & Fun", href: "https://meetup.com/germans", hrefLabel: "meetup.com/germans", map: { q: "Sin and Redemption Pub, Toronto", addr: "136 McCaul St" } },
-        { name: "Greater Toronto German Club", tags: ["deutsch", "community"], intro: "Deutscher Stammtisch (3. Mittwoch, Madison Pub, Annex), Samstags-Brunch, Pub-Abende in Oakville/Mississauga und „German Conversations\" für Lernende. (Deutsch.)", wann: "Mehrere feste Termine pro Monat.", fokus: "Community & Deutsch", href: "https://meetup.com/gtagerman", hrefLabel: "meetup.com/gtagerman", map: { q: "Madison Avenue Pub, Toronto", addr: "Annex" } },
-        { name: "GermansinToronto / „So German!\"", tags: ["deutsch", "community", "online"], intro: "Community-Netzwerk und Blog, das mit den obigen Gruppen verknüpft ist.", wann: "Laufend.", fokus: "Community", href: "https://sogerman.ca", hrefLabel: "sogerman.ca" },
-        { name: "InterNations & Meetup.com", tags: ["community", "online"], intro: "Breite Expat- und Neuzuzügler-Netzwerke auf Englisch.", wann: "Laufend.", fokus: "Community" },
-        { name: "FemCity Toronto", tags: ["community", "feminismus", "fun"], intro: "Frauen-Netzwerk- und Sozialclub (monatliche Treffen, AGO-Galerie-Meetups); geleitet von Judith George.", wann: "Monatlich.", fokus: "Community & Fun", href: "https://femcity.com/toronto", hrefLabel: "femcity.com/toronto" },
-        { name: "Volunteer Toronto (Querverweis)", tags: ["community", "ehrenamt"], intro: "Ehrenamt ist ebenfalls eine gute Art, Leute kennenzulernen — Anlaufstellen in der Rubrik „Sozialpolitik im Ehrenamt\".", wann: "—", fokus: "Community", href: "sozialpolitik-ehrenamt.html", hrefLabel: "Zur Rubrik Sozialpolitik" },
+      groups: [
+        {
+          heading: "Allgemein & international",
+          items: [
+            { name: "German Meetup Toronto", tags: ["deutsch", "community", "fun"], intro: "Das größte deutsche Meetup Nordamerikas (3.700+ Mitglieder); typischer Pub-Abend am ersten Donnerstag im Sin & Redemption Pub (gegenüber der AGO), plus gemeinsame Events mit Generalkonsulat, Goethe-Institut und deutschen Schulen. (Deutsch + Englisch.)", wann: "Erster Donnerstag im Monat.", fokus: "Community & Fun", href: "https://meetup.com/germans", hrefLabel: "meetup.com/germans", map: { q: "Sin and Redemption Pub, Toronto", addr: "136 McCaul St" } },
+            { name: "InterNations & Meetup Toronto", tags: ["community", "online", "fun"], intro: "Breite internationale Expat- und Neuzuzügler-Netzwerke mit regelmäßigen Mixern und Interessens-Meetups — gut, um schnell über Nationalitäten hinweg Leute kennenzulernen.", wann: "Laufend.", fokus: "Community", href: "https://www.internations.org/toronto-expats", hrefLabel: "internations.org" },
+            { name: "Weitere deutschsprachige Clubs (optional)", tags: ["deutsch", "community"], intro: "Für deutschsprachigen Austausch gibt es zusätzlich den Greater Toronto German Club (Stammtisch, Brunch) und das Netzwerk So German! — bei Interesse, aber kein Muss.", wann: "Laufend.", fokus: "Community (optional)", href: "https://meetup.com/gtagerman", hrefLabel: "meetup.com/gtagerman" },
+            { name: "Volunteer Toronto (Querverweis)", tags: ["community", "ehrenamt"], intro: "Ehrenamt ist ebenfalls eine gute Art, Leute kennenzulernen — Anlaufstellen in der Rubrik „Sozialpolitik & politisches Engagement\".", wann: "—", fokus: "Community", href: "sozialpolitik-ehrenamt.html", hrefLabel: "Zur Rubrik Sozialpolitik & Politik" },
+          ],
+        },
+        {
+          heading: "Feministische & frauenzentrierte Netzwerke (zum Kennenlernen)",
+          items: [
+            { name: "FemCity Toronto", tags: ["community", "feminismus", "fun"], intro: "Frauen-Netzwerk- und Sozialclub (monatliche Treffen, AGO-Galerie-Meetups); geleitet von Judith George.", wann: "Monatlich.", fokus: "Community & Fun", href: "https://femcity.com/toronto", hrefLabel: "femcity.com/toronto" },
+            { name: "Ellevate Toronto", tags: ["feminismus", "community", "karriere"], intro: "Frauen-Netzwerk mit Fokus auf Karriere und echte Verbindungen — Frühstücke, Lunches und After-Work-Treffen ohne reines Business-Pitchen.", wann: "Regelmäßige Treffen.", fokus: "Community & Karriere", href: "https://www.ellevatenetwork.com/chapters/12-ca-toronto", hrefLabel: "ellevatenetwork.com" },
+            { name: "Happy Healthy Women", tags: ["feminismus", "community", "wellness"], intro: "Ontario-weites Frauen-Netzwerk (mehrere Toronto-Branches) mit Coffee Mornings, Workshops und Buchclubs — niedrigschwellig und herzlich.", wann: "Laufend.", fokus: "Community", href: "https://happyhealthywomen.com", hrefLabel: "happyhealthywomen.com" },
+            { name: "University Women's Club of Toronto", tags: ["feminismus", "community", "wissenschaft"], intro: "Seit 1903 bestehendes Netzwerk akademisch gebildeter Frauen (Teil der Canadian Federation of University Women) — Vorträge, Stipendien, Advocacy und Geselligkeit. Passt gut zu einer Wissenschaftlerin.", wann: "Laufend.", fokus: "Community & Wissenschaft", href: "https://www.uwctoronto.ca", hrefLabel: "uwctoronto.ca" },
+            { name: "Meetup: Frauen & Feminismus (Toronto)", tags: ["feminismus", "community", "online", "fun"], intro: "Über Meetup laufen zahlreiche frauen- und feministisch orientierte Gruppen (Social-, Diskussions- und Buchclub-Formate) — nach Interesse filtern und reinschnuppern.", wann: "Laufend.", fokus: "Community", href: "https://www.meetup.com/find/ca--toronto/women/", hrefLabel: "meetup.com (Frauen-Gruppen)" },
+            { name: "Feministische Organisationen (Querverweis)", tags: ["feminismus", "politik"], intro: "Feministische Organisationen mit Advocacy-Fokus (LEAF, Canadian Women's Foundation, IWD-Kundgebung u. a.) findest du in der Rubrik „Feminismus\".", wann: "—", fokus: "Engagement", href: "feminismus.html", hrefLabel: "Zur Rubrik Feminismus" },
+          ],
+        },
       ],
       seasonal: null,
     },
@@ -125,20 +135,35 @@ window.GUIDE_DATA = {
     {
       id: "sozialpolitik-ehrenamt",
       num: 4,
-      title: "Sozialpolitik im Ehrenamt",
+      title: "Sozialpolitik & politisches Engagement",
       icon: "🫶",
-      lead: "Freiwilligenzentren, Think Tanks und Stiftungen an der Schnittstelle von Sozial- und Public Policy.",
+      lead: "Ehrenamt, Think Tanks und Stiftungen — plus praktische Anbindung an Parteien und politisches Engagement.",
       intro: null,
-      items: [
-        { name: "Volunteer Toronto", tags: ["ehrenamt", "community", "kostenlos"], intro: "Kanadas größtes Freiwilligenzentrum; durchsuchbare Angebote + Infoveranstaltungen „How to Become a Volunteer\". Beste Anlaufstelle für den Einstieg.", wann: "Laufend.", fokus: "Ehrenamt", href: "https://volunteertoronto.ca", hrefLabel: "volunteertoronto.ca" },
-        { name: "West Neighbourhood House", tags: ["ehrenamt", "politik"], intro: "Gemeinwesenarbeit und Public-Policy-/Advocacy; Heimat des CUSP-Fellowships (Einkommenssicherungspolitik). E-Mail community@westnh.org, Tel. 416-532-4828.", wann: "Laufend.", fokus: "Ehrenamt & Policy", href: "https://westnh.org", hrefLabel: "westnh.org" },
-        { name: "Social Planning Toronto", tags: ["politik", "ehrenamt", "wissenschaft"], intro: "Forschung, Bürgerbeteiligung und Lobbyarbeit zu Ungleichheit (Wohnen, Armut, Stadthaushalt); Mitgliedschaft, Ehrenamt und Schulungen.", wann: "Laufend.", fokus: "Engagement", href: "https://www.socialplanningtoronto.org", hrefLabel: "socialplanningtoronto.org" },
-        { name: "Maytree Foundation", tags: ["politik", "karriere"], intro: "Armuts- und Menschenrechtsansatz; „Five Good Ideas\"-Webinare und DiverseCity onBoard (vermittelt unterrepräsentierte Kandidat:innen in Vorstände — ideal für eine Politikwissenschaftlerin).", wann: "Laufend.", fokus: "Engagement & Karriere", href: "https://maytree.com", hrefLabel: "maytree.com" },
-        { name: "Canadian Centre for Policy Alternatives (CCPA) – Ontario", tags: ["politik", "wissenschaft"], intro: "Progressiver Think Tank; Magazin The Monitor, Bericht-Launches.", wann: "Laufend.", fokus: "Policy", href: "https://policyalternatives.ca", hrefLabel: "policyalternatives.ca" },
-        { name: "Wellesley Institute", tags: ["politik", "gesundheit", "wissenschaft"], intro: "Politikforschung zu Gesundheitsgerechtigkeit und sozialen Determinanten (Großraum Toronto).", wann: "Laufend.", fokus: "Policy", href: "https://wellesleyinstitute.com", hrefLabel: "wellesleyinstitute.com" },
-        { name: "Atkinson Foundation", tags: ["politik"], intro: "„Decent Work\" & wirtschaftliche Gerechtigkeit (Förderstiftung; Kampagnen/Fellowships verfolgen).", wann: "Laufend.", fokus: "Policy", href: "https://atkinsonfoundation.ca", hrefLabel: "atkinsonfoundation.ca" },
-        { name: "Income Security Advocacy Centre (ISAC)", tags: ["politik", "ehrenamt"], intro: "Juristische/politische Beratungsstelle gegen Armut; Newsletter, Koalitionen (ODSP Action Coalition, Campaign 2000).", wann: "Laufend.", fokus: "Policy", href: "https://incomesecurity.org", hrefLabel: "incomesecurity.org", map: { q: "55 University Ave, Toronto", addr: "55 University Ave" } },
-        { name: "City of Toronto — Volunteer with the City", tags: ["ehrenamt"], intro: "Beratungsgremien und städtische Programme.", wann: "Laufend.", fokus: "Ehrenamt", href: "https://toronto.ca", hrefLabel: "toronto.ca" },
+      groups: [
+        {
+          heading: "Freiwilligenzentren, Think Tanks & Stiftungen",
+          items: [
+            { name: "Volunteer Toronto", tags: ["ehrenamt", "community", "kostenlos"], intro: "Kanadas größtes Freiwilligenzentrum; durchsuchbare Angebote + Infoveranstaltungen „How to Become a Volunteer\". Beste Anlaufstelle für den Einstieg.", wann: "Laufend.", fokus: "Ehrenamt", href: "https://volunteertoronto.ca", hrefLabel: "volunteertoronto.ca" },
+            { name: "West Neighbourhood House", tags: ["ehrenamt", "politik"], intro: "Gemeinwesenarbeit und Public-Policy-/Advocacy; Heimat des CUSP-Fellowships (Einkommenssicherungspolitik). E-Mail community@westnh.org, Tel. 416-532-4828.", wann: "Laufend.", fokus: "Ehrenamt & Policy", href: "https://westnh.org", hrefLabel: "westnh.org" },
+            { name: "Social Planning Toronto", tags: ["politik", "ehrenamt", "wissenschaft"], intro: "Forschung, Bürgerbeteiligung und Lobbyarbeit zu Ungleichheit (Wohnen, Armut, Stadthaushalt); Mitgliedschaft, Ehrenamt und Schulungen.", wann: "Laufend.", fokus: "Engagement", href: "https://www.socialplanningtoronto.org", hrefLabel: "socialplanningtoronto.org" },
+            { name: "Maytree Foundation", tags: ["politik", "karriere"], intro: "Armuts- und Menschenrechtsansatz; „Five Good Ideas\"-Webinare und DiverseCity onBoard (vermittelt unterrepräsentierte Kandidat:innen in Vorstände — ideal für eine Politikwissenschaftlerin).", wann: "Laufend.", fokus: "Engagement & Karriere", href: "https://maytree.com", hrefLabel: "maytree.com" },
+            { name: "Canadian Centre for Policy Alternatives (CCPA) – Ontario", tags: ["politik", "wissenschaft"], intro: "Progressiver Think Tank; Magazin The Monitor, Bericht-Launches.", wann: "Laufend.", fokus: "Policy", href: "https://policyalternatives.ca", hrefLabel: "policyalternatives.ca" },
+            { name: "Wellesley Institute", tags: ["politik", "gesundheit", "wissenschaft"], intro: "Politikforschung zu Gesundheitsgerechtigkeit und sozialen Determinanten (Großraum Toronto).", wann: "Laufend.", fokus: "Policy", href: "https://wellesleyinstitute.com", hrefLabel: "wellesleyinstitute.com" },
+            { name: "Atkinson Foundation", tags: ["politik"], intro: "„Decent Work\" & wirtschaftliche Gerechtigkeit (Förderstiftung; Kampagnen/Fellowships verfolgen).", wann: "Laufend.", fokus: "Policy", href: "https://atkinsonfoundation.ca", hrefLabel: "atkinsonfoundation.ca" },
+            { name: "Income Security Advocacy Centre (ISAC)", tags: ["politik", "ehrenamt"], intro: "Juristische/politische Beratungsstelle gegen Armut; Newsletter, Koalitionen (ODSP Action Coalition, Campaign 2000).", wann: "Laufend.", fokus: "Policy", href: "https://incomesecurity.org", hrefLabel: "incomesecurity.org", map: { q: "55 University Ave, Toronto", addr: "55 University Ave" } },
+            { name: "City of Toronto — Volunteer with the City", tags: ["ehrenamt"], intro: "Beratungsgremien und städtische Programme.", wann: "Laufend.", fokus: "Ehrenamt", href: "https://toronto.ca", hrefLabel: "toronto.ca" },
+          ],
+        },
+        {
+          heading: "Parteipolitik & praktische Anbindung",
+          items: [
+            { name: "New Democratic Party (NDP) — föderal", tags: ["politik", "community", "karriere"], intro: "Kanadas sozialdemokratische Partei und — über die Progressive Alliance — die internationale Schwesterpartei der SPD; damit die ideologisch nächste Heimat für SPD-Mitglieder. Mitmachen über Mitgliedschaft und Freiwilligenarbeit.", wann: "Laufend.", fokus: "Politik (praktisch)", href: "https://www.ndp.ca/become-a-volunteer", hrefLabel: "ndp.ca" },
+            { name: "Ontario NDP — provinziell (Queen's Park)", tags: ["politik", "community"], intro: "Offizielle Opposition im Provinzparlament in Toronto (Leaderin Marit Stiles, MPP für Davenport). Die konkreteste lokale Andockstelle sind die Riding Associations (Wahlkreisverbände) — z. B. Toronto Centre, Toronto–Danforth, Davenport: Mitglieder wählen Kandidat:innen, organisieren vor Ort und entsenden Delegierte zu Parteitagen.", wann: "Laufend.", fokus: "Politik (lokal)", href: "https://www.ontariondp.ca", hrefLabel: "ontariondp.ca", map: { q: "Ontario Legislative Building, Toronto", addr: "Queen's Park" } },
+            { name: "Liberal Party of Canada", tags: ["politik", "community"], intro: "Die regierende Mitte-/Mitte-links-Partei unter Premierminister Mark Carney (seit 2025). Breite Volkspartei mit Mitgliedschaft und lokalen Wahlkreisverbänden; auf Provinzebene separat die Ontario Liberal Party.", wann: "Laufend.", fokus: "Politik (praktisch)", href: "https://liberal.ca", hrefLabel: "liberal.ca" },
+            { name: "Equal Voice (überparteilich)", tags: ["politik", "feminismus", "community"], intro: "Überparteiliche Organisation, die Frauen und nicht-binäre Menschen in die Politik bringt — guter neutraler Einstieg, um die kanadische politische Landschaft kennenzulernen, bevor man sich parteilich festlegt.", wann: "Laufend.", fokus: "Politik & Community", href: "https://www.equalvoice.ca", hrefLabel: "equalvoice.ca" },
+            { name: "Hinweis: Mitgliedschaft als Neuankömmlerin", tags: ["politik", "praktisch"], intro: "Ehrenamtliche Mitarbeit in Parteien steht in der Regel allen offen. Formelle Mitgliedschaft und Spenden können bei kanadischen Parteien an Staatsbürgerschaft oder Permanent Residency geknüpft sein — vor dem Beitritt kurz auf der jeweiligen Partei-Website prüfen.", wann: "Vorab prüfen.", fokus: "Praktisch" },
+          ],
+        },
       ],
       seasonal: null,
     },
