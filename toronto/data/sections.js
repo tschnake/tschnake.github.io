@@ -317,6 +317,14 @@ window.GUIDE_DATA = {
           map: { q: "Sunnybrook Park, Toronto" },
         },
         {
+          name: "Trinity Bellwoods Park",
+          tags: ["natur", "dackel", "fun", "community"],
+          intro: "Der beliebte „Dog Bowl\" (nicht eingezäunt) im West Queen West — sehr sozial, am Wochenende voll.",
+          wann: "Ganzjährig.",
+          fokus: "Fun & Dackel",
+          map: { q: "Trinity Bellwoods Park, Toronto", addr: "West Queen West" },
+        },
+        {
           name: "Beltline / Kay Gardner Beltline Trail",
           tags: ["natur", "dackel"],
           intro: "~9–13 km Mehrzweckweg aus feinem Kies (Leinenpflicht) — vom Mount Pleasant Cemetery über die Moore Park Ravine bis zu den Brick Works.",
@@ -486,6 +494,151 @@ window.GUIDE_DATA = {
         },
       ],
       seasonal: null,
+    },
+
+    /* A — Stadt & Sehenswürdigkeiten ----------------------------------- */
+    {
+      id: "stadt",
+      num: "A",
+      title: "Stadt & Sehenswürdigkeiten",
+      icon: "🏙️",
+      lead: "Sehenswürdigkeiten, Shopping und Wellness in Toronto — viele Indoor-Tipps für den Winter.",
+      intro: "Schwerpunkt Indoor sowie winter- und babytauglich; Hundefreundlichkeit ist je Eintrag angegeben.",
+      groups: [
+        {
+          heading: "Historische Viertel & Ikonen",
+          items: [
+            { name: "Distillery District", tags: ["kunst", "shopping", "fun", "outdoor", "winter", "dackel"], intro: "Autofreies viktorianisches Backstein-Viertel mit Galerien, Boutiquen, Restaurants und Cafés; Kopfsteinpflaster (mit Kinderwagen etwas holprig), im Freien hundefreundlich.", wann: "Ganzjährig; Christmas Market Nov.–Dez.", fokus: "Fun & Bummeln", href: "https://distillerydistrict.com", hrefLabel: "distillerydistrict.com", map: { q: "Distillery District, Toronto", addr: "Old Town / Corktown" } },
+            { name: "Sankofa Square (früher Yonge-Dundas Square)", tags: ["outdoor", "kostenlos", "fun"], intro: "Times-Square-ähnlicher Platz mit großen Videoleinwänden. Umbenennung erst seit 2024 sichtbar — viele Karten/Schilder nennen noch den alten Namen.", wann: "Ganzjährig; „Winter Glow\"-Event.", fokus: "Fun (kurzer Stopp)", href: "https://sankofasquare.ca", hrefLabel: "sankofasquare.ca", map: { q: "Sankofa Square, Toronto", addr: "Yonge/Dundas" } },
+            { name: "Toronto Islands", tags: ["natur", "outdoor", "fun", "dackel"], intro: "Inselgruppe mit Stränden, Radwegen und Skyline-Blick; Hunde an der Leine.", wann: "Eher Frühling/Herbst — im Winter reduzierter Fährbetrieb, kalt und windig.", fokus: "Fun & Natur", href: "https://toronto.ca", hrefLabel: "Fähr-Infos (toronto.ca)", map: { q: "Toronto Islands, Toronto" } },
+            { name: "CN Tower", tags: ["indoor", "fun", "winter"], intro: "Aussichtsplattform, Glasboden und Drehrestaurant — sehr gut bei Schnee und Kälte.", wann: "Ganzjährig (Indoor).", fokus: "Fun", href: "https://cntower.ca", hrefLabel: "cntower.ca", map: { q: "CN Tower, Toronto", addr: "Entertainment District" } },
+            { name: "Casa Loma", tags: ["indoor", "kunst", "winter", "familie"], intro: "Gothic-Revival-Schloss von 1914 mit Gärten und Tunneln (Gärten outdoor).", wann: "Ganzjährig; gut im Winter.", fokus: "Fun & Kultur", href: "https://casaloma.ca", hrefLabel: "casaloma.ca", map: { q: "Casa Loma, Toronto", addr: "Midtown / Davenport" } },
+            { name: "St. Lawrence Market", tags: ["indoor", "fun"], intro: "Historische Markthalle (seit 1850) mit Essständen; montags geschlossen, früh kommen.", wann: "Ganzjährig (Indoor).", fokus: "Fun & Essen", href: "https://stlawrencemarket.com", hrefLabel: "stlawrencemarket.com", map: { q: "St. Lawrence Market, Toronto", addr: "Old Town" } },
+            { name: "Kensington Market", tags: ["outdoor", "shopping", "fun"], intro: "Buntes Multikulti-Viertel mit Vintage-Läden und internationaler Küche; Mix aus Straßen und kleinen Indoor-Läden.", wann: "Ganzjährig.", fokus: "Fun & Bummeln", map: { q: "Kensington Market, Toronto", addr: "nahe Chinatown" } },
+            { name: "Graffiti Alley", tags: ["outdoor", "kunst", "kostenlos"], intro: "Street-Art-Gasse südlich der Queen St West — beliebt für Fotos.", wann: "Ganzjährig (Outdoor).", fokus: "Fun (kurzer Stopp)", map: { q: "Graffiti Alley, Toronto", addr: "Rush Lane" } },
+            { name: "Ripley's Aquarium of Canada", tags: ["indoor", "familie", "baby", "winter", "fun"], intro: "Über 20.000 Tiere, Hai-Tunnel und Touch-Tanks — top für Winter und mit Baby/Kinderwagen; Tickets vorab online buchen.", wann: "Ganzjährig (Indoor).", fokus: "Familie & Fun", href: "https://www.ripleyaquariums.com/canada", hrefLabel: "ripleyaquariums.com", map: { q: "Ripley's Aquarium of Canada, Toronto", addr: "am CN Tower" } },
+            { name: "Hockey Hall of Fame", tags: ["indoor", "fun", "winter"], intro: "Eishockey-Museum in Brookfield Place — über die PATH-Unterführung trockenen Fußes erreichbar, gut bei Kälte.", wann: "Ganzjährig (Indoor).", fokus: "Fun", href: "https://www.hhof.com", hrefLabel: "hhof.com", map: { q: "Hockey Hall of Fame, Toronto", addr: "Yonge/Front" } },
+            { name: "Nathan Phillips Square & TORONTO-Schild", tags: ["outdoor", "kostenlos", "winter", "familie"], intro: "Berühmtes „TORONTO\"-Leuchtschild vor der City Hall; im Winter öffentliche Eislaufbahn.", wann: "Ganzjährig; Eisbahn im Winter.", fokus: "Fun (kostenlos)", map: { q: "Nathan Phillips Square, Toronto" } },
+            { name: "Harbourfront Centre", tags: ["indoor", "outdoor", "kunst", "winter", "familie"], intro: "Kultur und Veranstaltungen an der Uferpromenade; im Winter die Natrel-Eislaufbahn am Wasser.", wann: "Ganzjährig.", fokus: "Fun & Kultur", href: "https://harbourfrontcentre.com", hrefLabel: "harbourfrontcentre.com", map: { q: "Harbourfront Centre, Toronto" } },
+            { name: "Allan Gardens Conservatory", tags: ["indoor", "natur", "kostenlos", "baby", "winter", "familie"], intro: "Historisches Gewächshaus mit Tropenpflanzen — ganzjährig warm und kostenlos, ideal im Winter mit Baby. Hunde nur im Off-Leash-Park, nicht im Gewächshaus.", wann: "Ganzjährig (Indoor, warm).", fokus: "Familie & Natur", href: "https://toronto.ca", hrefLabel: "toronto.ca", map: { q: "Allan Gardens, Toronto", addr: "Garden District" } },
+          ],
+        },
+        {
+          heading: "Shopping",
+          items: [
+            { name: "CF Toronto Eaton Centre", tags: ["shopping", "indoor", "baby", "winter"], intro: "Großes überdachtes Einkaufszentrum mit über 230 Läden; sehr gut bei schlechtem Wetter und kinderwagentauglich.", wann: "Ganzjährig (Indoor).", fokus: "Shopping", href: "https://www.cfshops.com", hrefLabel: "cfshops.com", map: { q: "CF Toronto Eaton Centre, Toronto", addr: "Yonge/Dundas" } },
+            { name: "Yorkville / Bloor Street („Mink Mile\")", tags: ["shopping", "kunst"], intro: "Luxus- und Designermarken sowie Galerien; Outdoor-Straßenshopping plus Indoor-Boutiquen.", wann: "Ganzjährig.", fokus: "Shopping (Schaufenster)", map: { q: "Bloor-Yorkville, Toronto" } },
+            { name: "Queen Street West", tags: ["shopping", "fun"], intro: "Mode, Design, unabhängige Läden und Cafés — trendiges Viertel zum Bummeln.", wann: "Ganzjährig.", fokus: "Shopping & Bummeln", map: { q: "Queen Street West, Toronto" } },
+          ],
+        },
+        {
+          heading: "Wellness / Spa",
+          items: [
+            { name: "Body Blitz Spa", tags: ["wellness", "indoor", "baby"], intro: "Reines Frauen-Spa mit Thermalwasser-Zirkel (Salzpool, Epsom-Pool, Kaltbecken, Dampfbad, Infrarot-Sauna); Wasserzugang ab ~85 CAD (Mi–So). Der West-Standort schloss Anfang 2026 — nur noch King St East.", wann: "Ganzjährig (Auszeit ohne Baby).", fokus: "Wellness / Mütter-Auszeit", href: "https://bodyblitzspa.com", hrefLabel: "bodyblitzspa.com", map: { q: "Body Blitz Spa East, Toronto", addr: "497 King St East" } },
+            { name: "Hammam Spa by Céla", tags: ["wellness", "indoor"], intro: "Türkisch/marokkanisch inspirierter Hammam mit Dampfraum und Behandlungen (ab 18 J.); zweiter Standort in Bayview Village.", wann: "Ganzjährig.", fokus: "Wellness", href: "https://www.hammamspa.ca", hrefLabel: "hammamspa.ca", map: { q: "Hammam Spa by Céla, Toronto", addr: "602 King St West" } },
+            { name: "Othership", tags: ["wellness", "indoor"], intro: "Geführte Sauna- und Eisbad-Sessions (skandinavische Hot-Cold-Therapie), gemischtgeschlechtlich, Badebekleidung nötig, ab 18 J.; Standorte Adelaide und Yorkville.", wann: "Ganzjährig.", fokus: "Wellness", href: "https://www.othership.us", hrefLabel: "othership.us", map: { q: "Othership Adelaide, Toronto", addr: "425 Adelaide St W" } },
+            { name: "Miraj Hammam Spa", tags: ["wellness", "indoor"], intro: "Privater, exklusiver Hammam im Shangri-La Hotel, plus Pool/Sauna/Jacuzzi; gehobenes Preissegment.", wann: "Ganzjährig.", fokus: "Wellness (Luxus)", href: "https://www.mirajhammamtoronto.com", hrefLabel: "mirajhammamtoronto.com", map: { q: "Shangri-La Toronto, 188 University Ave", addr: "188 University Ave" } },
+          ],
+        },
+      ],
+      seasonal: "Im Winter Indoor-Ziele priorisieren (Aquarium, Gewächshaus, Casa Loma, CN Tower, Markthalle). Toronto Islands eher Frühling/Herbst.",
+    },
+
+    /* B — Tagesausflüge ------------------------------------------------ */
+    {
+      id: "tagesausfluege",
+      num: "B",
+      title: "Tagesausflüge",
+      icon: "🚆",
+      lead: "Ausflugsziele rund um Toronto mit geprüften Fahrzeiten — winterfreundliche und Übernachtungs-Hinweise.",
+      intro: "Fahrzeiten sind Richtwerte ohne Verkehr. Für entspannte Tagesausflüge nur Ziele bis ~2,5 Std.; weiter entfernte besser als Übernachtung.",
+      groups: [
+        {
+          heading: "Gut machbar (ca. 1–2 Std.)",
+          items: [
+            { name: "Niagara Falls", tags: ["ausflug", "natur", "winter", "familie"], intro: "~130 km / 1,5–2 Std. (Auto QEW) oder GO Train + WEGO-Bus. Im Winter das Winter Festival of Lights (Mitte Nov.–Anf. Jan.), Kanadas größtes kostenloses Lichterfest, plus warme Indoor-Attraktionen.", wann: "Ganzjährig; Lichterfest Nov.–Jan.", fokus: "Fun & Natur", href: "https://www.niagaraparks.com", hrefLabel: "niagaraparks.com", map: { q: "Niagara Falls, Ontario" } },
+            { name: "Niagara-on-the-Lake", tags: ["ausflug", "fun"], intro: "~1,5 Std. (Auto), sonst GO Train + Anschluss. Malerischer Ortskern, Weinregion, Shaw Festival (Apr.–Dez.); Icewine Festival im Januar.", wann: "Ganzjährig; Icewine-Festival Jan.", fokus: "Fun & Genuss", href: "https://www.niagaraonthelake.com", hrefLabel: "niagaraonthelake.com", map: { q: "Niagara-on-the-Lake, Ontario" } },
+            { name: "Niagara-Weingüter", tags: ["ausflug", "fun"], intro: "Entlang der Niagara-Halbinsel (~1,5 Std.); viele ganzjährig, im Winter teils reduziert — vorab reservieren.", wann: "Ganzjährig (Winter eingeschränkt).", fokus: "Genuss", map: { q: "Niagara Wine Region, Ontario" } },
+            { name: "Scarborough Bluffs / Bluffer's Park", tags: ["natur", "outdoor", "dackel", "kostenlos"], intro: "Innerhalb der Stadt (~30–40 Min.); eindrucksvolle Klippen am Lake Ontario, Hunde an der Leine.", wann: "Ganzjährig.", fokus: "Natur & Dackel", map: { q: "Bluffer's Park, Scarborough" } },
+            { name: "Rouge National Urban Park", tags: ["natur", "outdoor", "dackel", "winter"], intro: "Scarborough (~30–45 Min.); größter städtischer Park Nordamerikas, Winterwandern möglich, Hunde an der Leine, Parken kostenpflichtig — auch per TTC/GO erreichbar.", wann: "Ganzjährig.", fokus: "Natur & Dackel", href: "https://parks.canada.ca/rouge", hrefLabel: "parks.canada.ca", map: { q: "Rouge National Urban Park, Toronto" } },
+            { name: "Hamilton-Wasserfälle", tags: ["ausflug", "natur", "winter", "dackel"], intro: "~1 Std. (Auto) oder GO Train nach Hamilton; Tew's/Webster's Falls und Dundas Peak — gefrorene Fälle spektakulär, Trails ggf. vereist (rutschfeste Stiefel), Hunde an der Leine.", wann: "Ganzjährig; Winter spektakulär.", fokus: "Natur & Fun", href: "https://www.tourismhamilton.com", hrefLabel: "tourismhamilton.com", map: { q: "Webster's Falls, Hamilton" } },
+            { name: "Royal Botanical Gardens", tags: ["ausflug", "natur", "indoor", "winter", "familie"], intro: "Burlington/Hamilton (~1 Std.); im Winter beheizte Gewächshäuser, Outdoor-Gärten am schönsten Frühling–Herbst.", wann: "Ganzjährig (Winter: Indoor).", fokus: "Natur & Familie", href: "https://www.rbg.ca", hrefLabel: "rbg.ca", map: { q: "Royal Botanical Gardens, Burlington" } },
+            { name: "Forks of the Credit / Cheltenham Badlands", tags: ["ausflug", "natur", "outdoor"], intro: "~1 Std.; rote Schiefer-Hügel (Cheltenham Badlands). Badlands saisonal geschlossen (ca. Nov.–Mai), Parkreservierung nötig — eher Frühling/Herbst.", wann: "Frühling/Herbst (Winter geschlossen).", fokus: "Natur", href: "https://heritagetrust.on.ca", hrefLabel: "heritagetrust.on.ca", map: { q: "Cheltenham Badlands, Caledon" } },
+            { name: "Albion Hills & Conservation Areas", tags: ["ausflug", "natur", "winter", "sport"], intro: "Caledon (~1 Std.); im Winter Langlauf und Schneeschuhwandern.", wann: "Winter (Langlauf).", fokus: "Sport & Natur", href: "https://trca.ca", hrefLabel: "trca.ca", map: { q: "Albion Hills Conservation Park, Caledon" } },
+            { name: "Hockley Valley", tags: ["ausflug", "natur", "winter", "sport"], intro: "~1 Std. (nahe Orangeville); Wandern, Skifahren und Spa-Resort — winterfreundlich.", wann: "Ganzjährig; winterfreundlich.", fokus: "Sport & Wellness", map: { q: "Hockley Valley, Ontario" } },
+          ],
+        },
+        {
+          heading: "Etwas weiter (ca. 2–2,5 Std.)",
+          items: [
+            { name: "Blue Mountain Village", tags: ["ausflug", "winter", "sport", "familie"], intro: "Collingwood (~2 Std.); Fußgängerdorf und Skigebiet — sehr winterfreundlich (Ski, Après-Ski).", wann: "Winter (Hauptsaison).", fokus: "Fun & Sport", href: "https://www.bluemountainvillage.ca", hrefLabel: "bluemountainvillage.ca", map: { q: "Blue Mountain Village, Collingwood" } },
+            { name: "Scandinave Spa Blue Mountain", tags: ["ausflug", "wellness", "winter"], intro: "~90 Min.; nordische Outdoor-Thermalbäder (Saunen, Heiß- und Kaltbecken) — besonders magisch im Schnee, werktags besuchen; Altersgrenze (18+) prüfen.", wann: "Winter (besonders schön).", fokus: "Wellness", href: "https://www.scandinave.com/blue-mountain", hrefLabel: "scandinave.com", map: { q: "Scandinave Spa Blue Mountain, Collingwood" } },
+            { name: "Prince Edward County & Sandbanks", tags: ["ausflug", "natur"], intro: "~2–2,5 Std.; größtes Süßwasser-Dünensystem der Welt, Weingüter und Strände — im Winter stark eingeschränkt, primär Frühling–Herbst.", wann: "Frühling–Herbst (Winter reduziert).", fokus: "Natur & Genuss", href: "https://www.ontarioparks.ca", hrefLabel: "ontarioparks.ca", map: { q: "Sandbanks Provincial Park, Ontario" } },
+            { name: "Stratford", tags: ["ausflug", "kunst", "fun"], intro: "~2 Std. (VIA Rail); Theaterstadt (Stratford Festival ~Apr.–Nov.), hübscher Ortskern — außerhalb der Saison ruhig, aber charmant.", wann: "Ganzjährig (Festival Apr.–Nov.).", fokus: "Kultur & Fun", href: "https://www.visitstratford.ca", hrefLabel: "visitstratford.ca", map: { q: "Stratford, Ontario" } },
+            { name: "St. Jacobs / Mennoniten-Land", tags: ["ausflug", "shopping", "winter", "familie"], intro: "~1,5 Std.; St. Jacobs Farmers' Market ist Kanadas größter ganzjähriger Bauernmarkt (Do & Sa 7–15:30 Uhr), plus Mennoniten-Kultur und Outlet-Mall — gutes Winterziel (Auto empfohlen).", wann: "Ganzjährig (Markt Do/Sa).", fokus: "Fun & Shopping", href: "https://www.stjacobs.com", hrefLabel: "stjacobs.com", map: { q: "St. Jacobs Farmers' Market, Ontario" } },
+            { name: "Muskoka (Gravenhurst/Bracebridge)", tags: ["ausflug", "natur", "winter"], intro: "~2–2,5 Std.; Seen und Cottage Country — als Tagesausflug machbar, aber lang (früh losfahren). Im Winter Schneeschuhwandern.", wann: "Ganzjährig (lang).", fokus: "Natur", map: { q: "Gravenhurst, Ontario" } },
+            { name: "Kawartha Lakes", tags: ["ausflug", "natur"], intro: "~1,5–2 Std.; ruhige Seenlandschaft, im Winter eingeschränkter Betrieb.", wann: "Frühling–Herbst.", fokus: "Natur", map: { q: "Kawartha Lakes, Ontario" } },
+          ],
+        },
+        {
+          heading: "Zu weit für einen Tag — lieber Übernachtung ⚠️",
+          items: [
+            { name: "Bruce Peninsula / Tobermory / Grotto", tags: ["ausflug", "natur"], intro: "~300 km / 3,5–4 Std. einfach — für einen Tagesausflug zu weit, als Übernachtung empfehlen; der Grotto v. a. Juni–Okt. mit Parkreservierung.", wann: "Übernachtung; Grotto Jun.–Okt.", fokus: "Natur (Wochenende)", href: "https://parks.canada.ca/bruce", hrefLabel: "parks.canada.ca", map: { q: "Bruce Peninsula National Park, Tobermory" } },
+            { name: "Thousand Islands", tags: ["ausflug", "natur"], intro: "~3+ Std. — zu weit für einen Tag, als Wochenende einplanen; Bootstouren v. a. im Sommer.", wann: "Übernachtung; Sommer.", fokus: "Natur (Wochenende)", map: { q: "Thousand Islands, Gananoque" } },
+          ],
+        },
+      ],
+      seasonal: "Reisezeiten sind Richtwerte ohne Verkehr (Wochenenden/Feiertage länger). Viele Naturziele und Weingüter mit Winterschließung — vor dem Ausflug die jeweilige Website prüfen.",
+    },
+
+    /* C — Alltag & Praktisches ----------------------------------------- */
+    {
+      id: "alltag",
+      num: "C",
+      title: "Alltag & Praktisches",
+      icon: "🧭",
+      lead: "Nahverkehr, Hunde-Alltag, Lebensmittel und Gesundheit für Neuankömmlinge.",
+      intro: "Praktische Infos für den Alltag mit Baby und Dackel. Einige Punkte haben keinen festen Ort und daher keine Karte.",
+      groups: [
+        {
+          heading: "Öffentlicher Nahverkehr",
+          items: [
+            { name: "TTC", tags: ["praktisch", "online"], intro: "U-Bahn, Straßenbahnen und Busse. Erwachsenentarif 3,35 CAD (2-Std.-Umstieg inkl.), Tagespass 13,50 CAD; Kinder bis 12 Jahre fahren kostenlos.", wann: "Täglich.", fokus: "Praktisch", href: "https://www.ttc.ca", hrefLabel: "ttc.ca" },
+            { name: "PRESTO-Karte", tags: ["praktisch", "online"], intro: "Wiederaufladbare Smartcard (physisch 4 CAD; digital in Apple/Google Wallet kostenlos). Erhältlich an U-Bahn-Automaten, bei Shoppers Drug Mart und Loblaws; manche Bibliotheken geben begrenzt kostenlose Karten aus.", wann: "Einmalig einrichten.", fokus: "Praktisch", href: "https://www.prestocard.ca", hrefLabel: "prestocard.ca" },
+            { name: "Kontaktlos zahlen", tags: ["praktisch"], intro: "Auf TTC/GO/UP einfach mit Kredit-/Debitkarte oder Handy am PRESTO-Leser zahlen (nur Erwachsenentarif). Wichtig: beim Umsteigen immer dieselbe Karte verwenden, sonst Doppelbelastung.", wann: "Sofort nutzbar.", fokus: "Praktisch" },
+            { name: "GO Transit & UP Express", tags: ["praktisch", "ausflug"], intro: "GO: Regionalzüge/-busse ins Umland (Kinder bis 12 frei, One-Fare-Rabatt beim Umstieg TTC↔GO). UP Express: Union Station ↔ Flughafen Pearson in ~25 Min.", wann: "Nach Bedarf.", fokus: "Praktisch", href: "https://www.gotransit.com", hrefLabel: "gotransit.com" },
+            { name: "Nützliche Apps", tags: ["praktisch", "online"], intro: "Google Maps, Transit App, Rocketman (Echtzeit-Abfahrten) und die PRESTO-App.", wann: "—", fokus: "Praktisch" },
+          ],
+        },
+        {
+          heading: "Hund im Alltag",
+          items: [
+            { name: "Hundeparks — Übersicht", tags: ["dackel", "natur"], intro: "Die wichtigsten Off-Leash-Parks (High Park, Cherry Beach, Sunnybrook, Trinity Bellwoods u. a.) findest du mit Karten in der Rubrik „Natur\".", wann: "—", fokus: "Dackel", href: "natur.html", hrefLabel: "Zur Rubrik Natur" },
+            { name: "Hunde in der TTC", tags: ["dackel", "praktisch"], intro: "In der TTC sind Hunde nur außerhalb der Stoßzeiten erlaubt — angeleint oder in der Transportbox.", wann: "Täglich.", fokus: "Dackel & Praktisch" },
+            { name: "Winter-Hundepflege", tags: ["dackel", "winter", "praktisch"], intro: "Pfotenschutz/Booties wegen Streusalz, Pfoten nach dem Spaziergang abwischen, für kleine Rassen (Dackel) ein Hundemantel; Salz nicht ablecken lassen.", wann: "Winter.", fokus: "Dackel" },
+          ],
+        },
+        {
+          heading: "Lebensmittel & europäische Produkte",
+          items: [
+            { name: "Supermärkte", tags: ["praktisch"], intro: "No Frills (günstig), Loblaws, Metro, Costco (Mitgliedschaft nötig). Für den Alltag meist No Frills/Metro am praktischsten.", wann: "Täglich.", fokus: "Praktisch" },
+            { name: "Denninger's", tags: ["deutsch", "shopping"], intro: "Traditionsreiche deutsche Delikatessen (Wurst, Käse, Brot, Schnitzel), seit 1954. Standorte nur in Hamilton, Burlington und Oakville — gut mit einem Hamilton-Ausflug zu verbinden.", wann: "Mit einem Ausflug verbinden.", fokus: "Deutsch & Genuss", href: "https://www.denningers.com", hrefLabel: "denningers.com", map: { q: "Denninger's, Hamilton, Ontario" } },
+            { name: "Food Depot International", tags: ["deutsch", "shopping"], intro: "Etobicoke; europäische Lebensmittel (deutsch, tschechisch, ungarisch), Käse und Wurst.", wann: "Nach Bedarf.", fokus: "Deutsch & Genuss", href: "https://www.fooddepottoronto.com", hrefLabel: "fooddepottoronto.com", map: { q: "Food Depot International, Etobicoke" } },
+            { name: "Apotheken (Shoppers Drug Mart)", tags: ["praktisch"], intro: "Überall, oft lange Öffnungszeiten (teils 24 Std.); verkauft auch PRESTO-Karten und vieles für den Alltag.", wann: "Täglich.", fokus: "Praktisch" },
+          ],
+        },
+        {
+          heading: "Gesundheit für Neuankömmlinge",
+          items: [
+            { name: "Health811", tags: ["gesundheit", "online", "baby"], intro: "Kostenloser, vertraulicher 24/7-Service: Beratung durch Pflegekräfte, Symptom-Checker, Arzt-/Dienstsuche; Telefon-Service in vielen Sprachen, kein Gesundheitsausweis nötig. Tel. 811 (kein Ersatz für 911).", wann: "24/7.", fokus: "Gesundheit", href: "https://health811.ontario.ca", hrefLabel: "health811.ontario.ca" },
+            { name: "OHIP / ServiceOntario", tags: ["gesundheit", "praktisch"], intro: "Staatliche Krankenversicherung — Antrag persönlich bei ServiceOntario (3 Original-Dokumente). Seit 2025 keine 3-Monats-Wartezeit mehr (nur ontario.ca als Quelle); Übergangs-Privatversicherung für die ersten Wochen sinnvoll. INFOline 1-866-532-3161.", wann: "Sofort nach Ankunft.", fokus: "Gesundheit", href: "https://www.ontario.ca/page/apply-ohip-and-get-health-card", hrefLabel: "ontario.ca" },
+            { name: "Health Care Connect", tags: ["gesundheit"], intro: "Vermittelt Hausarzt/Nurse Practitioner (braucht gültige OHIP-Nummer); wegen Ärztemangel kann es dauern — übergangsweise Walk-in-Kliniken, im Notfall 911. Tel. 1-888-579-6707.", wann: "Sobald OHIP da ist.", fokus: "Gesundheit", href: "https://www.ontario.ca/page/find-family-doctor-or-nurse-practitioner", hrefLabel: "ontario.ca" },
+            { name: "Toronto Public Health & HBHC", tags: ["gesundheit", "baby", "kinder", "kostenlos"], intro: "Healthy Babies Healthy Children: kostenloses, freiwilliges Hausbesuchsprogramm (Geburt–3 J.) durch Public-Health-Nurses, ausdrücklich für Neuankömmlinge und ohne OHIP nutzbar; plus kostenlose Stillberatung. Tel. 416-338-7600.", wann: "Direkt mit Baby.", fokus: "Familie & Gesundheit", href: "https://www.toronto.ca", hrefLabel: "toronto.ca" },
+            { name: "SickKids (Kinderkrankenhaus)", tags: ["gesundheit", "kinder", "baby"], intro: "The Hospital for Sick Children — großes Kinderkrankenhaus in Downtown Toronto.", wann: "Im Bedarfsfall.", fokus: "Gesundheit", map: { q: "The Hospital for Sick Children, Toronto", addr: "Downtown" } },
+          ],
+        },
+      ],
+      seasonal: "⚠️ TTC-Tarifänderungen 2026 (vorab auf ttc.ca prüfen): Monatspässe enden 31.08.2026; ab 01.09.2026 automatisches „ride-free\" nach 47 bezahlten Fahrten/Monat; ab 02.03.2026 nur Taps bei ausreichendem Guthaben.",
     },
   ],
 

@@ -108,6 +108,17 @@
     return card;
   }
 
+  // Hängt Items an: strukturierte (item.name) -> Place Cards, sonst Liste.
+  function appendItems(parent, items, ordered) {
+    if (items && items[0] && items[0].name) {
+      var list = el("div", "place-list");
+      items.forEach(function (it) { list.appendChild(renderPlaceCard(it)); });
+      parent.appendChild(list);
+    } else {
+      parent.appendChild(renderItemList(items, ordered));
+    }
+  }
+
   // Kopfbereich: Marke + Zurück-Link, Section-Logo, Eyebrow, Titel, Lead.
   function renderHead(eyebrow, title, lead, logoUrl) {
     var head = document.getElementById("page-head");
@@ -160,18 +171,10 @@
         var gh = el("h2", "group__heading", g.heading);
         if (g.sub) gh.innerHTML += ' <span class="group__sub">' + g.sub + "</span>";
         article.appendChild(gh);
-        article.appendChild(renderItemList(g.items, g.ordered));
+        appendItems(article, g.items, g.ordered);
       });
     } else if (s.items) {
-      if (s.items[0] && s.items[0].name) {
-        // neues, strukturiertes Format -> Place Cards
-        var list = el("div", "place-list");
-        s.items.forEach(function (it) { list.appendChild(renderPlaceCard(it)); });
-        article.appendChild(list);
-      } else {
-        // altes Format -> Aufzählung
-        article.appendChild(renderItemList(s.items, false));
-      }
+      appendItems(article, s.items, false);
     }
 
     if (s.seasonal) {
