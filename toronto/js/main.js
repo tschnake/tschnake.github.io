@@ -18,6 +18,16 @@
   var D = window.GUIDE_DATA;
   var LOGO = "img/toronto_dackel.png";
 
+  // Reihenfolge der Rubriken: most-to-least fun (oben = am meisten Fun).
+  var FUN_ORDER = [
+    "natur", "tagesausfluege", "stadt", "kultur-kunst", "sport-yoga",
+    "kontakte", "lesegruppen", "literatur-schreiben", "kindergruppen",
+    "indigene-geschichte", "alltag",
+    "feminismus", "ki-gesellschaft", "konferenzen", "lehrstuehle-kontakte",
+    "sozialpolitik-ehrenamt", "klimapolitik",
+  ];
+  function funRank(id) { var i = FUN_ORDER.indexOf(id); return i < 0 ? 999 : i; }
+
   function el(tag, className, html) {
     var node = document.createElement(tag);
     if (className) node.className = className;
@@ -57,7 +67,7 @@
   function cardEntries() {
     var entries = D.sections.map(function (s) {
       return { id: s.id, num: String(s.num), icon: s.icon, title: s.title, lead: s.lead };
-    });
+    }).sort(function (a, b) { return funRank(a.id) - funRank(b.id); });
     ["empfehlungen", "vorbehalte"].forEach(function (key) {
       var x = D.extras[key];
       entries.push({ id: key, num: x.icon, icon: x.icon, title: x.title, lead: x.lead, special: true });
