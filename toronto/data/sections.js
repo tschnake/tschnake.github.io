@@ -31,12 +31,15 @@ window.GUIDE_DATA = {
   subtitle: "Für Anna",
   period: "September 2026 – März 2027",
 
-  /* --- Kurzfassung: hervorgehobener Kasten oben ------------------------- */
-  kurzfassung: [
-    'Toronto bietet ein außergewöhnlich dichtes Netz an Möglichkeiten in allen 14 Interessensgebieten — von kostenlosen EarlyON-Eltern-Kind-Zentren und deutschsprachigen Familiengruppen (German Mamas &amp; Papas) bis zu erstklassigen Forschungsinstituten für KI-Governance (Schwartz Reisman Institute, Vector Institute) und Klimapolitik (Environmental Governance Lab, U of T).',
-    'Die wirkungsvollsten beruflichen Schritte sind kostenlos und sofort umsetzbar: <strong>POLCAN2</strong> abonnieren (der E-Newsletter der CPSA, der jeden Mittwoch an fast 4.000 Abonnent:innen geht und Mitgliedern wie Nicht-Mitgliedern offensteht; enthält Stellen, Ausschreibungen und Veranstaltungen), dem <strong>CPSA Women\'s Caucus</strong> beitreten und sich für die <strong>kostenlose, öffentliche SRI-Seminarreihe</strong> zu KI &amp; Gesellschaft anmelden — das bindet sie direkt in das akademische Netzwerk ein.',
-    'Saisonaler Hinweis: Der Zeitraum Sept–März ist der Toronto-Winter; viele Outdoor-/Natur- und Familienangebote verlagern sich nach drinnen, aber Schlittschuhlaufen (Evergreen Brick Works), Langlauf (TRCA-Gebiete) und hundefreundliche Wintertrails (High Park, Cherry Beach) sind verfügbar. Die großen akademischen Konferenzen (CPSA) finden im Frühsommer statt; daher liegt der Netzwerk-Fokus im Winter auf Seminarreihen, Vorträgen und direkter Kontaktaufnahme.',
-  ],
+  /* --- Willkommens-/Wegweiser-Box oben --------------------------------- */
+  intro: {
+    lead: "Toronto steckt voller Möglichkeiten — von Parks, Ausflügen und Kultur über Familie und Community bis zu Forschung und Politik. Hier sind sie in 17 Rubriken gebündelt, sortiert von „am meisten Fun\" bis „eher Engagement\". Winter-Tipp (Sept–März): vieles verlagert sich nach drinnen — Indoor-Kultur, Spas und winterfeste Trails gibt es trotzdem reichlich.",
+    schnellstart: [
+      "<strong>Mit Baby zuerst:</strong> nächstes kostenloses EarlyON-Zentrum finden und den deutschsprachigen German Mamas & Papas beitreten.",
+      "<strong>Beruflich, gratis & sofort:</strong> POLCAN2 abonnieren, dem CPSA Women's Caucus beitreten und für die kostenlose SRI-Seminarreihe anmelden (online = babyfreundlich).",
+      "<strong>Einfach mal raus:</strong> ein German-Meetup am ersten Donnerstag oder ein Winterspaziergang mit Dackel (High Park, Cherry Beach).",
+    ],
+  },
 
   /* --- Meta für die Sonderseiten Empfehlungen & Vorbehalte -------------- */
   extras: {

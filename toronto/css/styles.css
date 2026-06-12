@@ -119,6 +119,37 @@ strong { color: var(--ink); }
   color: var(--ink-soft);
 }
 
+/* Willkommens-/Wegweiser-Box */
+.intro__lead { margin: 0; font-size: 1.05rem; line-height: 1.55; }
+.intro__sub {
+  font-family: system-ui, sans-serif;
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--accent-deep);
+  margin: 20px 0 8px;
+}
+.tier { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 10px; margin-bottom: 7px; }
+.tier__badge {
+  flex: 0 0 auto;
+  font-family: system-ui, sans-serif;
+  font-size: 0.72rem; font-weight: 600;
+  padding: 2px 11px; border-radius: 999px;
+}
+.tier__badge--fun  { background: #dcedd2; color: #3f6b2a; }
+.tier__badge--mid  { background: #f6e6c8; color: #8a5a1a; }
+.tier__badge--work { background: #e7dccd; color: #7a4a2a; }
+.tier__list { color: var(--ink-soft); font-size: 0.95rem; }
+.tag-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-bottom: 7px; }
+.tag-legend__label {
+  font-family: system-ui, sans-serif;
+  font-size: 0.78rem; font-weight: 600;
+  color: var(--ink-soft); min-width: 70px;
+}
+.intro__schnellstart { margin: 6px 0 0; padding-left: 1.2em; }
+.intro__schnellstart > li { margin-bottom: 7px; }
+
 /* -- 5. Themen-Karten der Startseite (die großen Sprung-Boxen) --------- */
 .nav { margin: 40px 0; }
 .nav__title { font-size: 1.5rem; margin: 0 0 14px; }

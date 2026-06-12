@@ -51,15 +51,52 @@
     hero.appendChild(el("p", "hero__subtitle", D.subtitle));
   }
 
-  /* -- Kurzfassung (hervorgehobener Kasten) ----------------------------- */
-  function renderKurzfassung() {
+  /* -- Willkommens-/Wegweiser-Box --------------------------------------- */
+  // Fun-Stufen (kurze Anzeigenamen) — spiegeln FUN_ORDER wider.
+  var TIERS = [
+    { badge: "Mehr Fun", cls: "fun", list: "Natur · Tagesausflüge · Stadt · Kultur · Sport & Yoga" },
+    { badge: "Mittendrin", cls: "mid", list: "Kontakte · Lesen · Schreiben · Kindergruppen · Indigene · Alltag" },
+    { badge: "Eher Engagement", cls: "work", list: "Feminismus · KI · Konferenzen · Lehrstühle · Sozial- & Klimapolitik" },
+  ];
+  // Tag-Legende: zeigt, wonach man die Karten überfliegen kann.
+  var TAG_LEGEND = [
+    { label: "Thema", tags: ["natur", "kunst", "klima", "feminismus", "ki", "indigen", "literatur"] },
+    { label: "Fokus", tags: ["fun", "familie", "dackel", "kinder", "community", "wissenschaft", "ehrenamt"] },
+    { label: "Praktisch", tags: ["kostenlos", "deutsch", "online", "winter", "indoor"] },
+  ];
+
+  function renderIntro() {
     var box = document.getElementById("kurzfassung");
-    box.appendChild(el("h2", "box__title", "Kurzfassung"));
-    var list = el("ul", "item-list");
-    D.kurzfassung.forEach(function (html) {
-      list.appendChild(el("li", null, html));
+    box.classList.add("intro");
+    box.appendChild(el("h2", "box__title", "Willkommen — so findest du dich zurecht"));
+
+    if (D.intro && D.intro.lead) box.appendChild(el("p", "intro__lead", D.intro.lead));
+
+    // Fun-Stufen
+    box.appendChild(el("p", "intro__sub", "Sortiert nach Fun (oben am meisten)"));
+    TIERS.forEach(function (t) {
+      var row = el("div", "tier");
+      row.appendChild(el("span", "tier__badge tier__badge--" + t.cls, t.badge));
+      row.appendChild(el("span", "tier__list", t.list));
+      box.appendChild(row);
     });
-    box.appendChild(list);
+
+    // Tag-Legende
+    box.appendChild(el("p", "intro__sub", "Tags zeigen auf einen Blick, worum es geht"));
+    TAG_LEGEND.forEach(function (g) {
+      var row = el("div", "tag-legend");
+      row.appendChild(el("span", "tag-legend__label", g.label));
+      g.tags.forEach(function (tg) { row.appendChild(el("span", "tag-chip", "#" + tg)); });
+      box.appendChild(row);
+    });
+
+    // Schnellstart
+    if (D.intro && D.intro.schnellstart && D.intro.schnellstart.length) {
+      box.appendChild(el("p", "intro__sub", "Schnellstart — kostenlos & sofort"));
+      var ul = el("ul", "intro__schnellstart");
+      D.intro.schnellstart.forEach(function (h) { ul.appendChild(el("li", null, h)); });
+      box.appendChild(ul);
+    }
   }
 
   /* -- Große Themen-Karten ---------------------------------------------- */
@@ -131,7 +168,7 @@
     }
     document.title = D.title;
     renderHero();
-    renderKurzfassung();
+    renderIntro();
     renderCards();
     setupSearch();
   }
