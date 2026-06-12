@@ -350,6 +350,16 @@ strong { color: var(--ink); }
   border-radius: 999px;
   white-space: nowrap;
 }
+.card__dist {
+  font-family: system-ui, sans-serif;
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  background: transparent;
+  border: 1px solid var(--line);
+  padding: 2px 9px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
 .place-card__intro { margin: 0 0 12px; }
 .place-card__meta {
   display: flex; flex-direction: column; gap: 4px;
@@ -376,6 +386,40 @@ strong { color: var(--ink); }
   display: inline-block; margin-top: 8px;
   font-family: system-ui, sans-serif; font-size: 0.85rem;
 }
+
+/* -- 7c. "Weitere Angebote" — eingeklappte Place Cards ----------------- */
+.weitere { margin: 14px 0 4px; }
+.weitere > .place-list {
+  margin-top: 12px;
+  padding-left: 14px;
+  border-left: 2px solid var(--accent-soft);
+}
+.weitere__summary {
+  cursor: pointer;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent-deep);
+  background: var(--accent-soft);
+  padding: 7px 14px;
+  border-radius: 999px;
+}
+.weitere__summary::-webkit-details-marker { display: none; }
+.weitere__summary::after {
+  content: "▸";
+  font-size: 0.85rem;
+  transition: transform 0.15s ease;
+}
+.weitere[open] > .weitere__summary::after { transform: rotate(90deg); }
+.weitere__summary:hover { background: var(--highlight); }
+/* ganze Gruppe eingeklappt: Summary in Heading-Optik */
+.weitere--group { margin-top: 22px; }
+.weitere__summary--group { font-size: 1.08rem; border-radius: 8px; }
+.weitere--group > .place-list { border-left: none; padding-left: 0; }
 
 /* -- 8. Footer --------------------------------------------------------- */
 .site-footer {

@@ -80,13 +80,13 @@
 
     var head = el("div", "place-card__head");
     head.appendChild(el("h3", "place-card__name", item.name));
-    if (item.tags && item.tags.length) {
-      var tagRow = el("div", "tag-row");
-      item.tags.forEach(function (t) {
-        tagRow.appendChild(el("span", "tag-chip", "#" + t));
-      });
-      head.appendChild(tagRow);
-    }
+    var tagRow = el("div", "tag-row");
+    if (item.tags) item.tags.forEach(function (t) {
+      tagRow.appendChild(el("span", "tag-chip", "#" + t));
+    });
+    // Distanz-Badge nur bei verorteten Karten
+    if (item.dist) tagRow.appendChild(el("span", "card__dist", "📍 " + item.dist));
+    if (tagRow.childNodes.length) head.appendChild(tagRow);
     card.appendChild(head);
 
     if (item.intro) card.appendChild(el("p", "place-card__intro", item.intro));
@@ -108,14 +108,37 @@
     return card;
   }
 
-  // Hängt Items an: strukturierte (item.name) -> Place Cards, sonst Liste.
+  // Baut eine .place-list aus strukturierten Items.
+  function placeList(items) {
+    var list = el("div", "place-list");
+    items.forEach(function (it) { list.appendChild(renderPlaceCard(it)); });
+    return list;
+  }
+
+  // Hängt Items an: strukturierte (item.name) -> Place Cards mit Highlight-Logik
+  // (4–5 offen, Rest in <details>); sonst klassische Liste.
   function appendItems(parent, items, ordered) {
-    if (items && items[0] && items[0].name) {
-      var list = el("div", "place-list");
-      items.forEach(function (it) { list.appendChild(renderPlaceCard(it)); });
-      parent.appendChild(list);
-    } else {
+    if (!(items && items[0] && items[0].name)) {
       parent.appendChild(renderItemList(items, ordered));
+      return;
+    }
+    var hi = items.filter(function (i) { return i.highlight === true; });
+    var rest = items.filter(function (i) { return i.highlight !== true; });
+
+    if (hi.length === 0) {
+      // Fallback: keine Highlights gesetzt -> alle offen zeigen.
+      parent.appendChild(placeList(items));
+      return;
+    }
+
+    parent.appendChild(placeList(hi));
+    if (rest.length > 0) {
+      var det = el("details", "weitere");
+      var sum = el("summary", "weitere__summary");
+      sum.textContent = "Weitere Angebote (" + rest.length + ")";
+      det.appendChild(sum);
+      det.appendChild(placeList(rest));
+      parent.appendChild(det);
     }
   }
 
@@ -168,10 +191,20 @@
 
     if (s.groups) {
       s.groups.forEach(function (g) {
-        var gh = el("h2", "group__heading", g.heading);
-        if (g.sub) gh.innerHTML += ' <span class="group__sub">' + g.sub + "</span>";
-        article.appendChild(gh);
-        appendItems(article, g.items, g.ordered);
+        if (g.collapseAll) {
+          // ganze Gruppe eingeklappt: Heading als <summary>
+          var det = el("details", "weitere weitere--group");
+          var sum = el("summary", "weitere__summary weitere__summary--group");
+          sum.innerHTML = g.heading + (g.sub ? ' <span class="group__sub">' + g.sub + "</span>" : "");
+          det.appendChild(sum);
+          appendItems(det, g.items, g.ordered);
+          article.appendChild(det);
+        } else {
+          var gh = el("h2", "group__heading", g.heading);
+          if (g.sub) gh.innerHTML += ' <span class="group__sub">' + g.sub + "</span>";
+          article.appendChild(gh);
+          appendItems(article, g.items, g.ordered);
+        }
       });
     } else if (s.items) {
       appendItems(article, s.items, false);
